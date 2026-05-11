@@ -1,0 +1,1840 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Gracie Barra Haringey | Brazilian Jiu-Jitsu in North London</title>
+  <meta name="description" content="Train Brazilian Jiu-Jitsu at Gracie Barra Haringey. World-class instruction for adults, kids and beginners in North London. Book your free trial class today.">
+  <meta name="keywords" content="Brazilian Jiu-Jitsu, BJJ, Haringey, North London, Gracie Barra, martial arts, self defence, kids BJJ">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:ital,wght@0,300;0,400;0,600;0,700;0,800;0,900;1,700&family=Inter:wght@300;400;500;600&family=Barlow:wght@400;500;600&display=swap" rel="stylesheet">
+  <style>
+    /* ═══════════════════════════════════════════
+       RESET & BASE
+    ═══════════════════════════════════════════ */
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    :root {
+      --red:        #C8102E;
+      --red-dark:   #9E0B22;
+      --red-light:  #E8152F;
+      --black:      #080808;
+      --dark:       #111111;
+      --dark-2:     #1A1A1A;
+      --dark-3:     #242424;
+      --grey:       #888888;
+      --grey-light: #CCCCCC;
+      --white:      #FFFFFF;
+      --off-white:  #F4F4F4;
+      --font-head:  'Barlow Condensed', sans-serif;
+      --font-body:  'Inter', sans-serif;
+      --font-alt:   'Barlow', sans-serif;
+      --ease:       cubic-bezier(0.4, 0, 0.2, 1);
+      --ease-out:   cubic-bezier(0, 0, 0.2, 1);
+    }
+    html { scroll-behavior: smooth; overflow-x: hidden; }
+    body {
+      font-family: var(--font-body);
+      background: var(--black);
+      color: var(--white);
+      overflow-x: hidden;
+      -webkit-font-smoothing: antialiased;
+    }
+    img { display: block; max-width: 100%; }
+    a { text-decoration: none; color: inherit; }
+    ul { list-style: none; }
+    button { cursor: pointer; border: none; background: none; font-family: inherit; }
+
+    /* ═══════════════════════════════════════════
+       UTILITY
+    ═══════════════════════════════════════════ */
+    .container { max-width: 1200px; margin: 0 auto; padding: 0 24px; }
+    .section-label {
+      display: inline-flex; align-items: center; gap: 10px;
+      font-family: var(--font-head); font-size: 13px; font-weight: 700;
+      letter-spacing: 0.2em; text-transform: uppercase; color: var(--red);
+      margin-bottom: 16px;
+    }
+    .section-label::before {
+      content: ''; display: block; width: 32px; height: 2px; background: var(--red);
+    }
+    .section-title {
+      font-family: var(--font-head); font-weight: 800;
+      text-transform: uppercase; line-height: 0.95; color: var(--white);
+    }
+    .btn {
+      display: inline-flex; align-items: center; gap: 10px;
+      font-family: var(--font-head); font-weight: 700; font-size: 15px;
+      letter-spacing: 0.12em; text-transform: uppercase;
+      padding: 16px 36px; border-radius: 0;
+      transition: all 0.3s var(--ease);
+      position: relative; overflow: hidden;
+    }
+    .btn-primary {
+      background: var(--red); color: var(--white);
+    }
+    .btn-primary::after {
+      content: ''; position: absolute; inset: 0;
+      background: var(--red-light); transform: translateX(-101%);
+      transition: transform 0.4s var(--ease);
+    }
+    .btn-primary:hover::after { transform: translateX(0); }
+    .btn-primary span { position: relative; z-index: 1; }
+    .btn-outline {
+      background: transparent; color: var(--white);
+      border: 1px solid rgba(255,255,255,0.4);
+    }
+    .btn-outline:hover { background: var(--white); color: var(--black); border-color: var(--white); }
+    .btn-arrow::after { content: '→'; font-family: monospace; font-size: 18px; }
+
+    /* FADE-IN ANIMATION */
+    .fade-up {
+      opacity: 0; transform: translateY(40px);
+      transition: opacity 0.7s var(--ease-out), transform 0.7s var(--ease-out);
+    }
+    .fade-up.visible { opacity: 1; transform: translateY(0); }
+    .fade-up.delay-1 { transition-delay: 0.1s; }
+    .fade-up.delay-2 { transition-delay: 0.2s; }
+    .fade-up.delay-3 { transition-delay: 0.3s; }
+    .fade-up.delay-4 { transition-delay: 0.4s; }
+    .fade-left {
+      opacity: 0; transform: translateX(-40px);
+      transition: opacity 0.7s var(--ease-out), transform 0.7s var(--ease-out);
+    }
+    .fade-left.visible { opacity: 1; transform: translateX(0); }
+    .fade-right {
+      opacity: 0; transform: translateX(40px);
+      transition: opacity 0.7s var(--ease-out), transform 0.7s var(--ease-out);
+    }
+    .fade-right.visible { opacity: 1; transform: translateX(0); }
+
+    /* ═══════════════════════════════════════════
+       NAVIGATION
+    ═══════════════════════════════════════════ */
+    #nav {
+      position: fixed; top: 0; left: 0; right: 0; z-index: 1000;
+      transition: background 0.4s var(--ease), backdrop-filter 0.4s, box-shadow 0.4s;
+      padding: 0;
+    }
+    #nav.scrolled {
+      background: rgba(8,8,8,0.96);
+      backdrop-filter: blur(20px);
+      -webkit-backdrop-filter: blur(20px);
+      box-shadow: 0 1px 0 rgba(255,255,255,0.06);
+    }
+    .nav-inner {
+      display: flex; align-items: center; justify-content: space-between;
+      height: 72px; padding: 0 40px;
+      max-width: 1400px; margin: 0 auto;
+    }
+    .nav-logo {
+      display: flex; align-items: center; gap: 12px;
+      font-family: var(--font-head); font-weight: 800; font-size: 20px;
+      letter-spacing: 0.08em; text-transform: uppercase;
+    }
+    .nav-logo .logo-icon {
+      width: 42px; height: 42px; background: var(--red);
+      display: flex; align-items: center; justify-content: center;
+      font-size: 22px; font-weight: 900; letter-spacing: -1px;
+      clip-path: polygon(50% 0%, 100% 25%, 100% 75%, 50% 100%, 0% 75%, 0% 25%);
+    }
+    .nav-logo .logo-text { line-height: 1.1; }
+    .nav-logo .logo-text span { display: block; font-size: 10px; font-weight: 400; letter-spacing: 0.25em; color: var(--grey); }
+    .nav-links {
+      display: flex; align-items: center; gap: 36px;
+    }
+    .nav-links a {
+      font-family: var(--font-head); font-size: 14px; font-weight: 600;
+      letter-spacing: 0.15em; text-transform: uppercase; color: rgba(255,255,255,0.8);
+      position: relative; transition: color 0.3s;
+    }
+    .nav-links a::after {
+      content: ''; position: absolute; bottom: -4px; left: 0; right: 0; height: 1px;
+      background: var(--red); transform: scaleX(0); transform-origin: left;
+      transition: transform 0.3s var(--ease);
+    }
+    .nav-links a:hover { color: var(--white); }
+    .nav-links a:hover::after { transform: scaleX(1); }
+    .nav-cta {
+      background: var(--red); color: var(--white);
+      font-family: var(--font-head); font-weight: 700; font-size: 13px;
+      letter-spacing: 0.15em; text-transform: uppercase;
+      padding: 10px 22px; transition: background 0.3s;
+    }
+    .nav-cta:hover { background: var(--red-light); }
+    .nav-hamburger {
+      display: none; flex-direction: column; gap: 5px;
+      width: 26px; cursor: pointer;
+    }
+    .nav-hamburger span {
+      display: block; height: 2px; background: var(--white);
+      transition: all 0.3s var(--ease); transform-origin: center;
+    }
+    .nav-hamburger.open span:nth-child(1) { transform: rotate(45deg) translate(5px, 5px); }
+    .nav-hamburger.open span:nth-child(2) { opacity: 0; }
+    .nav-hamburger.open span:nth-child(3) { transform: rotate(-45deg) translate(5px, -5px); }
+    .nav-mobile {
+      display: none; position: fixed; top: 72px; left: 0; right: 0; bottom: 0;
+      background: rgba(8,8,8,0.98); backdrop-filter: blur(20px);
+      flex-direction: column; align-items: center; justify-content: center;
+      gap: 36px; z-index: 999;
+    }
+    .nav-mobile.open { display: flex; }
+    .nav-mobile a {
+      font-family: var(--font-head); font-size: 36px; font-weight: 800;
+      letter-spacing: 0.08em; text-transform: uppercase;
+      color: rgba(255,255,255,0.7); transition: color 0.3s;
+    }
+    .nav-mobile a:hover { color: var(--red); }
+
+    /* ═══════════════════════════════════════════
+       HERO
+    ═══════════════════════════════════════════ */
+    #hero {
+      position: relative; height: 100vh; min-height: 700px;
+      display: flex; align-items: center; overflow: hidden;
+    }
+    .hero-bg {
+      position: absolute; inset: 0;
+      background:
+        radial-gradient(ellipse 80% 60% at 60% 50%, rgba(200,16,46,0.12) 0%, transparent 60%),
+        linear-gradient(160deg, #0D0D0D 0%, #1A0508 40%, #0D0D0D 100%);
+    }
+    /* Animated diagonal grid lines */
+    .hero-bg::before {
+      content: '';
+      position: absolute; inset: -50%;
+      background-image:
+        repeating-linear-gradient(
+          -45deg,
+          transparent,
+          transparent 60px,
+          rgba(200,16,46,0.03) 60px,
+          rgba(200,16,46,0.03) 61px
+        );
+      animation: gridMove 20s linear infinite;
+    }
+    @keyframes gridMove {
+      from { transform: translateX(0) translateY(0); }
+      to   { transform: translateX(84px) translateY(84px); }
+    }
+    .hero-bg::after {
+      content: '';
+      position: absolute; inset: 0;
+      background: linear-gradient(to right, rgba(8,8,8,0.85) 40%, rgba(8,8,8,0.2) 100%);
+    }
+    .hero-image {
+      position: absolute; right: 0; top: 0; bottom: 0; width: 58%;
+      background:
+        linear-gradient(to right, rgba(8,8,8,1) 0%, rgba(8,8,8,0) 30%),
+        linear-gradient(to top, rgba(8,8,8,0.8) 0%, transparent 40%),
+        linear-gradient(135deg, #1a0505 0%, #2d1010 30%, #1a1a1a 60%, #0d0d0d 100%);
+      overflow: hidden;
+    }
+    /* Stylised BJJ silhouette placeholder */
+    .hero-image::before {
+      content: '';
+      position: absolute; inset: 0;
+      background:
+        radial-gradient(ellipse 60% 80% at 65% 55%, rgba(200,16,46,0.08) 0%, transparent 60%);
+    }
+    .hero-image-placeholder {
+      position: absolute; inset: 0;
+      display: flex; align-items: center; justify-content: center;
+    }
+    .bjj-silhouette {
+      width: 100%; height: 100%;
+      background:
+        linear-gradient(135deg,
+          rgba(200,16,46,0.15) 0%,
+          transparent 40%,
+          rgba(200,16,46,0.06) 100%
+        );
+      position: relative;
+    }
+    /* Large GB monogram as background art */
+    .bjj-silhouette::after {
+      content: 'GB';
+      position: absolute; bottom: 10%; right: 8%;
+      font-family: var(--font-head); font-weight: 900; font-size: 28vw;
+      color: rgba(200,16,46,0.04); line-height: 1;
+      user-select: none; pointer-events: none;
+      letter-spacing: -0.05em;
+    }
+    .hero-content {
+      position: relative; z-index: 2;
+      padding: 0 40px; max-width: 760px; margin-left: calc((100vw - 1400px) / 2 + 40px);
+    }
+    @media (max-width: 1400px) { .hero-content { margin-left: 40px; } }
+    .hero-badge {
+      display: inline-flex; align-items: center; gap: 8px;
+      background: rgba(200,16,46,0.15); border: 1px solid rgba(200,16,46,0.4);
+      color: var(--red); font-family: var(--font-head); font-size: 12px;
+      font-weight: 700; letter-spacing: 0.2em; text-transform: uppercase;
+      padding: 8px 16px; margin-bottom: 28px;
+    }
+    .hero-badge::before { content: '●'; font-size: 8px; animation: pulse 2s ease infinite; }
+    @keyframes pulse {
+      0%, 100% { opacity: 1; } 50% { opacity: 0.3; }
+    }
+    .hero-title {
+      font-family: var(--font-head); font-weight: 900;
+      font-size: clamp(60px, 8vw, 120px);
+      line-height: 0.92; text-transform: uppercase;
+      margin-bottom: 28px;
+    }
+    .hero-title .line-1 { display: block; color: var(--white); }
+    .hero-title .line-2 {
+      display: block; color: var(--red);
+      -webkit-text-stroke: 0px; text-shadow: none;
+    }
+    .hero-title .line-3 { display: block; color: rgba(255,255,255,0.15); }
+    .hero-subtitle {
+      font-family: var(--font-body); font-weight: 300; font-size: 16px;
+      line-height: 1.7; color: rgba(255,255,255,0.6);
+      max-width: 480px; margin-bottom: 44px;
+    }
+    .hero-actions { display: flex; align-items: center; gap: 16px; flex-wrap: wrap; }
+    .hero-scroll {
+      position: absolute; bottom: 40px; left: 50%; transform: translateX(-50%);
+      z-index: 2; display: flex; flex-direction: column; align-items: center; gap: 8px;
+      font-family: var(--font-head); font-size: 11px; letter-spacing: 0.25em;
+      text-transform: uppercase; color: rgba(255,255,255,0.3);
+    }
+    .hero-scroll-line {
+      width: 1px; height: 60px; background: linear-gradient(to bottom, var(--red), transparent);
+      animation: scrollLine 2s ease infinite;
+    }
+    @keyframes scrollLine {
+      0% { transform: scaleY(0); transform-origin: top; opacity: 1; }
+      50% { transform: scaleY(1); transform-origin: top; opacity: 1; }
+      51% { transform: scaleY(1); transform-origin: bottom; opacity: 1; }
+      100% { transform: scaleY(0); transform-origin: bottom; opacity: 0; }
+    }
+
+    /* ═══════════════════════════════════════════
+       STATS BAR
+    ═══════════════════════════════════════════ */
+    #stats {
+      background: var(--red); padding: 0;
+      position: relative; z-index: 1;
+    }
+    .stats-inner {
+      display: grid; grid-template-columns: repeat(4, 1fr);
+    }
+    .stat-item {
+      padding: 36px 24px; text-align: center;
+      border-right: 1px solid rgba(255,255,255,0.15);
+      transition: background 0.3s;
+    }
+    .stat-item:last-child { border-right: none; }
+    .stat-item:hover { background: rgba(0,0,0,0.15); }
+    .stat-num {
+      font-family: var(--font-head); font-weight: 900;
+      font-size: clamp(36px, 5vw, 60px); line-height: 1;
+      color: var(--white);
+    }
+    .stat-num .suffix { font-size: 0.6em; }
+    .stat-label {
+      font-family: var(--font-head); font-size: 13px; font-weight: 500;
+      letter-spacing: 0.15em; text-transform: uppercase;
+      color: rgba(255,255,255,0.7); margin-top: 6px;
+    }
+
+    /* ═══════════════════════════════════════════
+       ABOUT
+    ═══════════════════════════════════════════ */
+    #about {
+      padding: 120px 0; background: var(--dark);
+      position: relative; overflow: hidden;
+    }
+    #about::before {
+      content: 'BJJ'; position: absolute; right: -40px; top: 50%;
+      transform: translateY(-50%); font-family: var(--font-head);
+      font-weight: 900; font-size: 320px; line-height: 1;
+      color: rgba(255,255,255,0.015); pointer-events: none;
+      user-select: none;
+    }
+    .about-grid {
+      display: grid; grid-template-columns: 1fr 1fr; gap: 80px; align-items: center;
+    }
+    .about-media { position: relative; padding-bottom: 40px; }
+    .about-img-frame {
+      position: relative; padding-bottom: 120%; background: var(--dark-2);
+      overflow: hidden;
+    }
+    .about-img-frame::before {
+      content: '';
+      position: absolute; inset: 0;
+      background:
+        linear-gradient(to bottom, rgba(8,8,8,0.85) 0%, rgba(8,8,8,0.3) 35%, transparent 60%),
+        linear-gradient(135deg, rgba(200,16,46,0.18) 0%, transparent 50%),
+        repeating-linear-gradient(
+          -45deg, transparent, transparent 8px,
+          rgba(200,16,46,0.04) 8px, rgba(200,16,46,0.04) 9px
+        );
+      z-index: 1;
+    }
+    .about-img-overlay {
+      position: absolute; top: 28px; left: 28px; right: 28px; z-index: 2;
+    }
+    .about-quote {
+      font-family: var(--font-head); font-weight: 800; font-size: 20px;
+      text-transform: uppercase; line-height: 1.25; color: var(--white);
+      border-left: 3px solid var(--red); padding-left: 16px;
+      text-shadow: 0 2px 12px rgba(0,0,0,0.8);
+    }
+    .about-accent {
+      position: absolute; top: -16px; right: -16px; width: 72px; height: 72px;
+      background: var(--red); z-index: 4;
+      display: flex; align-items: center; justify-content: center;
+      font-family: var(--font-head); font-weight: 900; font-size: 28px;
+      color: var(--white);
+    }
+    .about-year-badge {
+      position: absolute; bottom: -28px; left: 28px;
+      background: var(--dark-3); border: 1px solid rgba(200,16,46,0.35);
+      padding: 18px 28px; z-index: 3;
+    }
+    .about-year-badge .yr { font-family: var(--font-head); font-weight: 900; font-size: 42px; color: var(--red); line-height: 1; }
+    .about-year-badge .yr-label { font-family: var(--font-head); font-size: 11px; letter-spacing: 0.2em; text-transform: uppercase; color: var(--grey); }
+    .about-content { }
+    .about-title {
+      font-size: clamp(48px, 6vw, 80px);
+      margin-bottom: 24px;
+    }
+    .about-body {
+      font-size: 16px; line-height: 1.8; color: rgba(255,255,255,0.6);
+      margin-bottom: 20px;
+    }
+    .about-pillars {
+      display: grid; grid-template-columns: 1fr 1fr; gap: 16px;
+      margin: 36px 0;
+    }
+    .pillar {
+      display: flex; align-items: flex-start; gap: 12px;
+      padding: 16px; border: 1px solid rgba(255,255,255,0.06);
+      transition: border-color 0.3s;
+    }
+    .pillar:hover { border-color: rgba(200,16,46,0.4); }
+    .pillar-icon {
+      width: 36px; height: 36px; min-width: 36px;
+      background: rgba(200,16,46,0.1); border: 1px solid rgba(200,16,46,0.3);
+      display: flex; align-items: center; justify-content: center;
+      font-size: 16px;
+    }
+    .pillar-text h4 {
+      font-family: var(--font-head); font-weight: 700; font-size: 15px;
+      letter-spacing: 0.08em; text-transform: uppercase; margin-bottom: 4px;
+    }
+    .pillar-text p { font-size: 13px; color: var(--grey); line-height: 1.5; }
+
+    /* ═══════════════════════════════════════════
+       PROGRAMMES
+    ═══════════════════════════════════════════ */
+    #programmes {
+      padding: 120px 0; background: var(--black);
+      position: relative; overflow: hidden;
+    }
+    .programmes-header { text-align: center; margin-bottom: 72px; }
+    .programmes-title { font-size: clamp(52px, 7vw, 90px); margin-bottom: 20px; }
+    .programmes-subtitle {
+      font-size: 16px; color: rgba(255,255,255,0.5); max-width: 560px; margin: 0 auto;
+    }
+    .programmes-grid {
+      display: grid; grid-template-columns: repeat(3, 1fr); gap: 2px;
+    }
+    .programme-card {
+      position: relative; overflow: hidden;
+      background: var(--dark-2);
+      padding: 56px 36px 44px;
+      transition: transform 0.4s var(--ease);
+      cursor: default;
+    }
+    .programme-card::before {
+      content: ''; position: absolute; top: 0; left: 0; right: 0; height: 3px;
+      background: var(--red); transform: scaleX(0); transform-origin: left;
+      transition: transform 0.4s var(--ease);
+    }
+    .programme-card:hover::before { transform: scaleX(1); }
+    .programme-card:hover { transform: translateY(-4px); }
+    .programme-card .card-number {
+      font-family: var(--font-head); font-weight: 900; font-size: 80px;
+      color: rgba(255,255,255,0.04); line-height: 1; margin-bottom: 24px;
+      transition: color 0.4s;
+    }
+    .programme-card:hover .card-number { color: rgba(200,16,46,0.08); }
+    .programme-card .card-icon {
+      width: 52px; height: 52px;
+      background: rgba(200,16,46,0.1); border: 1px solid rgba(200,16,46,0.25);
+      display: flex; align-items: center; justify-content: center;
+      font-size: 22px; margin-bottom: 20px;
+      transition: background 0.3s, border-color 0.3s;
+    }
+    .programme-card:hover .card-icon {
+      background: rgba(200,16,46,0.2); border-color: rgba(200,16,46,0.6);
+    }
+    .programme-card h3 {
+      font-family: var(--font-head); font-weight: 800; font-size: 32px;
+      text-transform: uppercase; line-height: 1; margin-bottom: 12px;
+    }
+    .programme-card .card-tag {
+      font-family: var(--font-head); font-size: 11px; font-weight: 700;
+      letter-spacing: 0.2em; text-transform: uppercase;
+      color: var(--red); margin-bottom: 16px;
+    }
+    .programme-card p {
+      font-size: 14px; color: rgba(255,255,255,0.55); line-height: 1.7; margin-bottom: 28px;
+    }
+    .programme-card .card-features {
+      border-top: 1px solid rgba(255,255,255,0.06); padding-top: 20px;
+    }
+    .programme-card .card-features li {
+      font-size: 13px; color: rgba(255,255,255,0.5);
+      padding: 5px 0; display: flex; align-items: center; gap: 8px;
+    }
+    .programme-card .card-features li::before {
+      content: '—'; color: var(--red); font-weight: 700;
+    }
+    /* Featured card */
+    .programme-card.featured { background: var(--dark-3); }
+    .programme-card.featured::after {
+      content: 'POPULAR';
+      position: absolute; top: 20px; right: 20px;
+      background: var(--red); color: var(--white);
+      font-family: var(--font-head); font-size: 10px; font-weight: 700;
+      letter-spacing: 0.2em; padding: 4px 10px;
+    }
+
+    /* ═══════════════════════════════════════════
+       SCHEDULE
+    ═══════════════════════════════════════════ */
+    #schedule {
+      padding: 120px 0;
+      background: var(--dark);
+      position: relative;
+    }
+    #schedule::before {
+      content: '';
+      position: absolute; inset: 0;
+      background: linear-gradient(to bottom, transparent, rgba(200,16,46,0.03) 50%, transparent);
+      pointer-events: none;
+    }
+    .schedule-header { margin-bottom: 60px; }
+    .schedule-header-inner {
+      display: flex; align-items: flex-end; justify-content: space-between; gap: 24px;
+    }
+    .schedule-title { font-size: clamp(48px, 6vw, 80px); }
+    .schedule-note {
+      font-size: 14px; color: rgba(255,255,255,0.4); max-width: 320px;
+      text-align: right; line-height: 1.6;
+    }
+    .schedule-tabs {
+      display: flex; gap: 2px; margin-bottom: 32px;
+    }
+    .tab-btn {
+      font-family: var(--font-head); font-size: 14px; font-weight: 700;
+      letter-spacing: 0.1em; text-transform: uppercase;
+      padding: 12px 24px; background: var(--dark-2); color: rgba(255,255,255,0.4);
+      transition: all 0.3s;
+    }
+    .tab-btn.active { background: var(--red); color: var(--white); }
+    .tab-btn:hover:not(.active) { background: var(--dark-3); color: var(--white); }
+    .schedule-table {
+      width: 100%; border-collapse: collapse;
+      display: none;
+    }
+    .schedule-table.active { display: table; }
+    .schedule-table thead tr {
+      background: rgba(200,16,46,0.1); border-bottom: 1px solid rgba(200,16,46,0.3);
+    }
+    .schedule-table th {
+      font-family: var(--font-head); font-size: 12px; font-weight: 700;
+      letter-spacing: 0.2em; text-transform: uppercase; color: var(--red);
+      padding: 14px 20px; text-align: left;
+    }
+    .schedule-table tbody tr {
+      border-bottom: 1px solid rgba(255,255,255,0.04);
+      transition: background 0.2s;
+    }
+    .schedule-table tbody tr:hover { background: rgba(255,255,255,0.03); }
+    .schedule-table td {
+      padding: 16px 20px; font-size: 14px; color: rgba(255,255,255,0.7);
+    }
+    .schedule-table td:first-child {
+      font-family: var(--font-head); font-weight: 700; font-size: 16px;
+      color: var(--white);
+    }
+    .class-badge {
+      display: inline-block; font-family: var(--font-head); font-size: 11px;
+      font-weight: 700; letter-spacing: 0.15em; text-transform: uppercase;
+      padding: 4px 10px; background: rgba(200,16,46,0.12);
+      border: 1px solid rgba(200,16,46,0.25); color: var(--red);
+    }
+    .class-badge.kids { background: rgba(255,180,0,0.1); border-color: rgba(255,180,0,0.3); color: #FFB400; }
+    .class-badge.no-gi { background: rgba(100,200,255,0.1); border-color: rgba(100,200,255,0.3); color: #64C8FF; }
+    .schedule-cta {
+      margin-top: 40px; padding: 32px; background: var(--dark-2);
+      border: 1px solid rgba(200,16,46,0.2);
+      display: flex; align-items: center; justify-content: space-between; gap: 24px;
+    }
+    .schedule-cta p {
+      font-family: var(--font-head); font-size: 22px; font-weight: 700;
+      text-transform: uppercase;
+    }
+    .schedule-cta p span { color: var(--red); }
+
+    /* ═══════════════════════════════════════════
+       INSTRUCTORS
+    ═══════════════════════════════════════════ */
+    #instructors {
+      padding: 120px 0; background: var(--black);
+    }
+    .instructors-header { margin-bottom: 64px; }
+    .instructors-grid {
+      display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px;
+    }
+    .instructor-card {
+      position: relative; overflow: hidden;
+      background: var(--dark-2);
+      transition: transform 0.4s var(--ease);
+    }
+    .instructor-card:hover { transform: translateY(-6px); }
+    .instructor-card:hover .instructor-overlay { opacity: 1; }
+    .instructor-img {
+      position: relative; padding-bottom: 110%;
+      background: var(--dark-3); overflow: hidden;
+    }
+    .instructor-img::before {
+      content: '';
+      position: absolute; inset: 0;
+      background: linear-gradient(to bottom, transparent 50%, rgba(8,8,8,0.9) 100%);
+      z-index: 1;
+    }
+    .instructor-placeholder {
+      position: absolute; inset: 0;
+      display: flex; flex-direction: column; align-items: center; justify-content: center;
+    }
+    .instructor-monogram {
+      font-family: var(--font-head); font-weight: 900;
+      font-size: 96px; color: rgba(200,16,46,0.15); line-height: 1;
+    }
+    .instructor-belt {
+      position: absolute; bottom: 0; left: 0; right: 0; height: 6px; z-index: 2;
+    }
+    .belt-black { background: #1a1a1a; border-top: 1px solid #333; }
+    .belt-coral { background: linear-gradient(to right, #FF6B35 50%, #1a1a1a 50%); }
+    .belt-brown { background: #6B3A2A; }
+    .instructor-overlay {
+      position: absolute; inset: 0; z-index: 3;
+      background: rgba(200,16,46,0.1);
+      opacity: 0; transition: opacity 0.4s;
+    }
+    .instructor-info { padding: 24px; }
+    .instructor-name {
+      font-family: var(--font-head); font-weight: 800; font-size: 26px;
+      text-transform: uppercase; line-height: 1; margin-bottom: 4px;
+    }
+    .instructor-title {
+      font-family: var(--font-head); font-size: 12px; font-weight: 600;
+      letter-spacing: 0.2em; text-transform: uppercase; color: var(--red);
+      margin-bottom: 12px;
+    }
+    .instructor-bio {
+      font-size: 13px; color: rgba(255,255,255,0.5); line-height: 1.6;
+    }
+
+    /* ═══════════════════════════════════════════
+       BENEFITS / WHY BJJ
+    ═══════════════════════════════════════════ */
+    #benefits {
+      padding: 120px 0;
+      background: var(--red);
+      position: relative; overflow: hidden;
+    }
+    #benefits::before {
+      content: '';
+      position: absolute; inset: -50%;
+      background-image:
+        repeating-linear-gradient(
+          0deg, transparent, transparent 40px,
+          rgba(255,255,255,0.04) 40px, rgba(255,255,255,0.04) 41px
+        ),
+        repeating-linear-gradient(
+          90deg, transparent, transparent 40px,
+          rgba(255,255,255,0.04) 40px, rgba(255,255,255,0.04) 41px
+        );
+    }
+    .benefits-inner { position: relative; z-index: 1; }
+    .benefits-header { margin-bottom: 64px; }
+    .benefits-header .section-label { color: rgba(255,255,255,0.6); }
+    .benefits-header .section-label::before { background: rgba(255,255,255,0.6); }
+    .benefits-title { font-size: clamp(48px, 6vw, 80px); }
+    .benefits-grid {
+      display: grid; grid-template-columns: repeat(4, 1fr); gap: 2px;
+    }
+    .benefit-item {
+      padding: 40px 28px;
+      background: rgba(0,0,0,0.2);
+      border-bottom: 3px solid transparent;
+      transition: background 0.3s, border-color 0.3s, transform 0.3s;
+    }
+    .benefit-item:hover {
+      background: rgba(0,0,0,0.35); border-color: var(--white);
+      transform: translateY(-4px);
+    }
+    .benefit-item .benefit-num {
+      font-family: var(--font-head); font-weight: 900; font-size: 14px;
+      color: rgba(255,255,255,0.4); letter-spacing: 0.1em; margin-bottom: 20px;
+    }
+    .benefit-item .benefit-icon { font-size: 32px; margin-bottom: 16px; }
+    .benefit-item h4 {
+      font-family: var(--font-head); font-weight: 800; font-size: 24px;
+      text-transform: uppercase; line-height: 1; margin-bottom: 12px;
+    }
+    .benefit-item p { font-size: 13px; color: rgba(255,255,255,0.7); line-height: 1.6; }
+
+    /* ═══════════════════════════════════════════
+       TESTIMONIALS
+    ═══════════════════════════════════════════ */
+    #testimonials {
+      padding: 120px 0; background: var(--dark);
+    }
+    .testimonials-header {
+      display: flex; align-items: flex-end; justify-content: space-between;
+      margin-bottom: 64px; gap: 24px;
+    }
+    .testimonials-title { font-size: clamp(48px, 6vw, 80px); }
+    .reviews-badge {
+      display: flex; align-items: center; gap: 12px;
+      border: 1px solid rgba(255,255,255,0.1); padding: 16px 24px;
+      min-width: 200px;
+    }
+    .reviews-stars { font-size: 20px; letter-spacing: 2px; color: #FFB400; }
+    .reviews-info { font-family: var(--font-head); }
+    .reviews-info strong { font-size: 28px; font-weight: 900; }
+    .reviews-info span { display: block; font-size: 11px; letter-spacing: 0.15em; text-transform: uppercase; color: var(--grey); }
+    .testimonials-grid {
+      display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px;
+    }
+    .testimonial-card {
+      background: var(--dark-2); padding: 36px;
+      border: 1px solid rgba(255,255,255,0.04);
+      position: relative; overflow: hidden;
+      transition: border-color 0.3s, transform 0.3s;
+    }
+    .testimonial-card:hover { border-color: rgba(200,16,46,0.3); transform: translateY(-3px); }
+    .testimonial-card::before {
+      content: '"';
+      position: absolute; top: 20px; right: 24px;
+      font-family: Georgia, serif; font-size: 100px; color: rgba(200,16,46,0.08);
+      line-height: 1;
+    }
+    .testimonial-stars { color: #FFB400; font-size: 14px; letter-spacing: 2px; margin-bottom: 16px; }
+    .testimonial-text {
+      font-size: 15px; color: rgba(255,255,255,0.7); line-height: 1.7;
+      margin-bottom: 24px; font-style: italic;
+    }
+    .testimonial-author {
+      display: flex; align-items: center; gap: 12px;
+      border-top: 1px solid rgba(255,255,255,0.06); padding-top: 20px;
+    }
+    .author-avatar {
+      width: 40px; height: 40px; border-radius: 50%;
+      background: var(--dark-3); border: 2px solid var(--red);
+      display: flex; align-items: center; justify-content: center;
+      font-family: var(--font-head); font-weight: 900; font-size: 16px;
+      color: var(--red);
+    }
+    .author-info .name {
+      font-family: var(--font-head); font-weight: 700; font-size: 16px;
+      text-transform: uppercase;
+    }
+    .author-info .since { font-size: 12px; color: var(--grey); }
+
+    /* ═══════════════════════════════════════════
+       CTA SECTION
+    ═══════════════════════════════════════════ */
+    #cta {
+      position: relative; padding: 140px 0; overflow: hidden;
+      background: var(--black);
+    }
+    .cta-bg {
+      position: absolute; inset: 0;
+      background:
+        radial-gradient(ellipse 70% 100% at 50% 50%, rgba(200,16,46,0.12) 0%, transparent 70%),
+        var(--black);
+    }
+    .cta-bg::before {
+      content: '';
+      position: absolute; inset: 0;
+      background-image:
+        repeating-linear-gradient(
+          45deg, transparent, transparent 80px,
+          rgba(200,16,46,0.025) 80px, rgba(200,16,46,0.025) 81px
+        );
+    }
+    .cta-content {
+      position: relative; z-index: 1;
+      text-align: center; max-width: 800px; margin: 0 auto;
+    }
+    .cta-title {
+      font-size: clamp(56px, 8vw, 110px);
+      margin-bottom: 24px;
+    }
+    .cta-body {
+      font-size: 17px; color: rgba(255,255,255,0.55); max-width: 520px;
+      margin: 0 auto 48px; line-height: 1.7;
+    }
+    .cta-actions { display: flex; align-items: center; justify-content: center; gap: 16px; flex-wrap: wrap; }
+    .cta-trust {
+      margin-top: 48px; display: flex; align-items: center; justify-content: center;
+      gap: 32px; flex-wrap: wrap;
+    }
+    .cta-trust-item {
+      display: flex; align-items: center; gap: 8px;
+      font-family: var(--font-head); font-size: 13px; font-weight: 600;
+      letter-spacing: 0.1em; text-transform: uppercase; color: rgba(255,255,255,0.4);
+    }
+    .cta-trust-item::before { content: '✓'; color: var(--red); }
+
+    /* ═══════════════════════════════════════════
+       FAQ
+    ═══════════════════════════════════════════ */
+    #faq {
+      padding: 120px 0; background: var(--dark);
+    }
+    .faq-grid {
+      display: grid; grid-template-columns: 1fr 2fr; gap: 80px; align-items: start;
+    }
+    .faq-sidebar { position: sticky; top: 100px; }
+    .faq-sidebar-title { font-size: clamp(44px, 5vw, 72px); margin-bottom: 24px; }
+    .faq-sidebar p { font-size: 15px; color: rgba(255,255,255,0.5); line-height: 1.7; margin-bottom: 32px; }
+    .faq-list { }
+    .faq-item {
+      border-bottom: 1px solid rgba(255,255,255,0.07); overflow: hidden;
+    }
+    .faq-question {
+      width: 100%; display: flex; align-items: center; justify-content: space-between; gap: 16px;
+      padding: 24px 0; text-align: left;
+      font-family: var(--font-head); font-weight: 700; font-size: 20px;
+      text-transform: uppercase; color: var(--white); cursor: pointer;
+      transition: color 0.3s;
+    }
+    .faq-question:hover { color: var(--red); }
+    .faq-icon {
+      width: 28px; height: 28px; min-width: 28px;
+      border: 1px solid rgba(255,255,255,0.2);
+      display: flex; align-items: center; justify-content: center;
+      font-size: 18px; color: var(--grey);
+      transition: transform 0.3s, border-color 0.3s, color 0.3s;
+    }
+    .faq-item.open .faq-icon {
+      transform: rotate(45deg); border-color: var(--red); color: var(--red);
+    }
+    .faq-answer {
+      max-height: 0; overflow: hidden;
+      transition: max-height 0.4s var(--ease);
+    }
+    .faq-item.open .faq-answer { max-height: 500px; }
+    .faq-answer p {
+      font-size: 15px; color: rgba(255,255,255,0.55); line-height: 1.7;
+      padding-bottom: 24px;
+    }
+
+    /* ═══════════════════════════════════════════
+       CONTACT / LOCATION
+    ═══════════════════════════════════════════ */
+    #contact {
+      padding: 120px 0; background: var(--black);
+    }
+    .contact-grid {
+      display: grid; grid-template-columns: 1fr 1fr; gap: 64px; align-items: start;
+    }
+    .contact-title { font-size: clamp(44px, 5vw, 72px); margin-bottom: 32px; }
+    .contact-details { margin-bottom: 40px; }
+    .contact-item {
+      display: flex; align-items: flex-start; gap: 16px;
+      padding: 20px 0; border-bottom: 1px solid rgba(255,255,255,0.05);
+    }
+    .contact-item-icon {
+      width: 44px; height: 44px; min-width: 44px;
+      background: rgba(200,16,46,0.1); border: 1px solid rgba(200,16,46,0.25);
+      display: flex; align-items: center; justify-content: center; font-size: 18px;
+    }
+    .contact-item-info h4 {
+      font-family: var(--font-head); font-size: 12px; font-weight: 700;
+      letter-spacing: 0.2em; text-transform: uppercase; color: var(--red);
+      margin-bottom: 4px;
+    }
+    .contact-item-info p { font-size: 15px; color: rgba(255,255,255,0.7); line-height: 1.5; }
+    .contact-form { }
+    .contact-form h3 {
+      font-family: var(--font-head); font-weight: 800; font-size: 32px;
+      text-transform: uppercase; margin-bottom: 24px;
+    }
+    .form-group { margin-bottom: 16px; }
+    .form-row { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; }
+    .form-group input,
+    .form-group select,
+    .form-group textarea {
+      width: 100%;
+      background: var(--dark-2); border: 1px solid rgba(255,255,255,0.08);
+      color: var(--white); font-family: var(--font-body); font-size: 14px;
+      padding: 14px 18px; outline: none;
+      transition: border-color 0.3s;
+      -webkit-appearance: none;
+    }
+    .form-group input::placeholder,
+    .form-group textarea::placeholder { color: rgba(255,255,255,0.25); }
+    .form-group input:focus,
+    .form-group select:focus,
+    .form-group textarea:focus { border-color: var(--red); }
+    .form-group select option { background: var(--dark-2); }
+    .form-group textarea { resize: vertical; min-height: 100px; }
+    .form-submit { width: 100%; padding: 18px; margin-top: 8px; }
+    .map-frame {
+      background: var(--dark-2); aspect-ratio: 4/3;
+      position: relative; overflow: hidden;
+      border: 1px solid rgba(255,255,255,0.06);
+    }
+    .map-frame iframe {
+      width: 100%; height: 100%; border: none;
+      filter: grayscale(100%) invert(90%) contrast(85%);
+      opacity: 0.7;
+    }
+    .map-overlay {
+      position: absolute; bottom: 0; left: 0; right: 0;
+      background: linear-gradient(to top, rgba(8,8,8,0.9), transparent);
+      padding: 24px 20px 16px;
+    }
+    .map-label {
+      font-family: var(--font-head); font-weight: 700; font-size: 16px;
+      text-transform: uppercase; color: var(--white);
+    }
+    .map-label span { color: var(--red); }
+
+    /* ═══════════════════════════════════════════
+       FOOTER
+    ═══════════════════════════════════════════ */
+    #footer {
+      background: var(--dark); border-top: 1px solid rgba(255,255,255,0.05);
+      padding: 80px 0 0;
+    }
+    .footer-grid {
+      display: grid; grid-template-columns: 2fr 1fr 1fr 1fr; gap: 48px;
+      margin-bottom: 60px;
+    }
+    .footer-brand .footer-logo {
+      display: flex; align-items: center; gap: 12px;
+      font-family: var(--font-head); font-weight: 800; font-size: 18px;
+      text-transform: uppercase; margin-bottom: 20px;
+    }
+    .footer-brand .footer-logo .logo-icon {
+      width: 38px; height: 38px; background: var(--red);
+      display: flex; align-items: center; justify-content: center;
+      font-size: 18px; font-weight: 900;
+      clip-path: polygon(50% 0%, 100% 25%, 100% 75%, 50% 100%, 0% 75%, 0% 25%);
+    }
+    .footer-brand p {
+      font-size: 14px; color: rgba(255,255,255,0.4); line-height: 1.7; margin-bottom: 24px;
+    }
+    .footer-social {
+      display: flex; gap: 10px;
+    }
+    .social-link {
+      width: 38px; height: 38px;
+      background: rgba(255,255,255,0.05); border: 1px solid rgba(255,255,255,0.08);
+      display: flex; align-items: center; justify-content: center;
+      font-size: 14px; transition: all 0.3s;
+    }
+    .social-link:hover { background: var(--red); border-color: var(--red); }
+    .footer-col h4 {
+      font-family: var(--font-head); font-size: 13px; font-weight: 700;
+      letter-spacing: 0.2em; text-transform: uppercase; color: var(--red);
+      margin-bottom: 20px;
+    }
+    .footer-col ul li { margin-bottom: 10px; }
+    .footer-col ul a {
+      font-size: 14px; color: rgba(255,255,255,0.45);
+      transition: color 0.3s;
+    }
+    .footer-col ul a:hover { color: var(--white); }
+    .footer-bottom {
+      border-top: 1px solid rgba(255,255,255,0.05);
+      padding: 24px 0;
+      display: flex; align-items: center; justify-content: space-between; gap: 16px;
+      flex-wrap: wrap;
+    }
+    .footer-bottom p {
+      font-size: 13px; color: rgba(255,255,255,0.25);
+    }
+    .footer-bottom a { color: var(--red); }
+    .gb-affiliation {
+      display: flex; align-items: center; gap: 10px;
+      font-family: var(--font-head); font-size: 12px; font-weight: 700;
+      letter-spacing: 0.15em; text-transform: uppercase; color: rgba(255,255,255,0.25);
+    }
+    .gb-badge {
+      width: 28px; height: 28px; background: var(--red);
+      display: flex; align-items: center; justify-content: center;
+      font-size: 12px; font-weight: 900;
+      clip-path: polygon(50% 0%, 100% 25%, 100% 75%, 50% 100%, 0% 75%, 0% 25%);
+    }
+
+    /* ═══════════════════════════════════════════
+       MOBILE
+    ═══════════════════════════════════════════ */
+    @media (max-width: 1024px) {
+      .about-grid { grid-template-columns: 1fr; gap: 48px; }
+      .about-media { max-width: 500px; }
+      .about-img-frame { padding-bottom: 80%; }
+      .programmes-grid { grid-template-columns: 1fr 1fr; }
+      .instructors-grid { grid-template-columns: 1fr 1fr; }
+      .benefits-grid { grid-template-columns: 1fr 1fr; }
+      .footer-grid { grid-template-columns: 1fr 1fr; }
+      .stats-inner { grid-template-columns: 1fr 1fr; }
+      .stat-item:nth-child(2) { border-right: none; }
+      .stat-item:nth-child(3), .stat-item:nth-child(4) { border-top: 1px solid rgba(255,255,255,0.15); }
+    }
+    @media (max-width: 768px) {
+      .nav-links, .nav-cta { display: none; }
+      .nav-hamburger { display: flex; }
+      .nav-inner { padding: 0 20px; }
+      .hero-content { padding: 0 20px; margin-left: 0; }
+      .hero-image { width: 100%; opacity: 0.2; }
+      .hero-title { font-size: clamp(52px, 15vw, 80px); }
+      .programmes-grid { grid-template-columns: 1fr; }
+      .instructors-grid { grid-template-columns: 1fr; }
+      .testimonials-grid { grid-template-columns: 1fr; }
+      .benefits-grid { grid-template-columns: 1fr 1fr; }
+      .faq-grid { grid-template-columns: 1fr; }
+      .faq-sidebar { position: static; }
+      .contact-grid { grid-template-columns: 1fr; }
+      .footer-grid { grid-template-columns: 1fr; }
+      .schedule-header-inner { flex-direction: column; align-items: flex-start; }
+      .schedule-note { text-align: left; max-width: none; }
+      .testimonials-header { flex-direction: column; align-items: flex-start; }
+      .schedule-table { font-size: 13px; }
+      .schedule-table th, .schedule-table td { padding: 10px 12px; }
+      .schedule-cta { flex-direction: column; text-align: center; }
+      .cta-trust { gap: 16px; }
+      .form-row { grid-template-columns: 1fr; }
+      .container { padding: 0 16px; }
+    }
+    @media (max-width: 480px) {
+      #hero { min-height: 100svh; }
+      .hero-actions { flex-direction: column; align-items: flex-start; }
+      .benefits-grid { grid-template-columns: 1fr; }
+      .stats-inner { grid-template-columns: 1fr 1fr; }
+    }
+  </style>
+</head>
+<body>
+
+<!-- ═══ NAVIGATION ═══ -->
+<nav id="nav">
+  <div class="nav-inner">
+    <a href="#" class="nav-logo">
+      <div class="logo-icon">GB</div>
+      <div class="logo-text">
+        Gracie Barra
+        <span>Haringey · London</span>
+      </div>
+    </a>
+    <ul class="nav-links">
+      <li><a href="#about">About</a></li>
+      <li><a href="#programmes">Programmes</a></li>
+      <li><a href="#schedule">Schedule</a></li>
+      <li><a href="#instructors">Instructors</a></li>
+      <li><a href="#faq">FAQ</a></li>
+      <li><a href="#contact">Contact</a></li>
+    </ul>
+    <a href="#cta" class="nav-cta">Free Trial</a>
+    <button class="nav-hamburger" id="hamburger" aria-label="Menu">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+</nav>
+
+<!-- Mobile Menu -->
+<div class="nav-mobile" id="mobileMenu">
+  <a href="#about" class="mobile-link">About</a>
+  <a href="#programmes" class="mobile-link">Programmes</a>
+  <a href="#schedule" class="mobile-link">Schedule</a>
+  <a href="#instructors" class="mobile-link">Instructors</a>
+  <a href="#faq" class="mobile-link">FAQ</a>
+  <a href="#contact" class="mobile-link">Contact</a>
+  <a href="#cta" class="btn btn-primary"><span>Book Free Trial</span></a>
+</div>
+
+<!-- ═══ HERO ═══ -->
+<section id="hero">
+  <div class="hero-bg"></div>
+  <div class="hero-image">
+    <div class="hero-image-placeholder">
+      <div class="bjj-silhouette"></div>
+    </div>
+  </div>
+  <div class="hero-content">
+    <div class="hero-badge">Gracie Barra Certified School · Est. London</div>
+    <h1 class="hero-title">
+      <span class="line-1">Forge</span>
+      <span class="line-2">Champions</span>
+      <span class="line-3">On The Mat</span>
+    </h1>
+    <p class="hero-subtitle">
+      North London's home for world-class Brazilian Jiu-Jitsu. Training adults, kids and beginners since day one — on the mat and in life.
+    </p>
+    <div class="hero-actions">
+      <a href="#cta" class="btn btn-primary"><span>Start Your Free Trial</span></a>
+      <a href="#about" class="btn btn-outline">Discover More</a>
+    </div>
+  </div>
+  <div class="hero-scroll">
+    <div class="hero-scroll-line"></div>
+    Scroll
+  </div>
+</section>
+
+<!-- ═══ STATS ═══ -->
+<section id="stats">
+  <div class="stats-inner">
+    <div class="stat-item fade-up">
+      <div class="stat-num"><span class="count" data-target="200">0</span><span class="suffix">+</span></div>
+      <div class="stat-label">Active Members</div>
+    </div>
+    <div class="stat-item fade-up delay-1">
+      <div class="stat-num"><span class="count" data-target="10">0</span><span class="suffix">+</span></div>
+      <div class="stat-label">Years Training</div>
+    </div>
+    <div class="stat-item fade-up delay-2">
+      <div class="stat-num"><span class="count" data-target="5">0</span><span class="suffix"></span></div>
+      <div class="stat-label">Expert Instructors</div>
+    </div>
+    <div class="stat-item fade-up delay-3">
+      <div class="stat-num"><span class="count" data-target="7">0</span><span class="suffix">x</span></div>
+      <div class="stat-label">Classes Per Week</div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══ ABOUT ═══ -->
+<section id="about">
+  <div class="container">
+    <div class="about-grid">
+      <div class="about-media fade-left">
+        <div class="about-img-frame">
+          <div class="about-img-overlay">
+            <p class="about-quote">"Jiu-Jitsu is for everyone. The mat is a great equaliser."</p>
+          </div>
+        </div>
+        <div class="about-accent">GB</div>
+        <div class="about-year-badge">
+          <div class="yr">2014</div>
+          <div class="yr-label">Founded in Haringey</div>
+        </div>
+      </div>
+      <div class="about-content">
+        <div class="fade-up">
+          <span class="section-label">Our Story</span>
+          <h2 class="section-title about-title">More Than<br>A Gym.<br>A Family.</h2>
+        </div>
+        <p class="about-body fade-up delay-1">
+          Gracie Barra Haringey is part of the world's largest Brazilian Jiu-Jitsu organisation — founded by Master Carlos Gracie Jr. We bring that global standard of excellence to North London, creating a safe, welcoming environment where everyone from complete beginners to seasoned competitors can grow.
+        </p>
+        <p class="about-body fade-up delay-2">
+          Our academy runs structured programmes for all ages and levels. Whether you're looking for fitness, self-defence, competition or simply a challenge — this is your place.
+        </p>
+        <div class="about-pillars fade-up delay-3">
+          <div class="pillar">
+            <div class="pillar-icon">🥋</div>
+            <div class="pillar-text">
+              <h4>World-Class BJJ</h4>
+              <p>Gracie Barra certified curriculum from white to black belt.</p>
+            </div>
+          </div>
+          <div class="pillar">
+            <div class="pillar-icon">🌍</div>
+            <div class="pillar-text">
+              <h4>Global Community</h4>
+              <p>Train with a worldwide network of GB schools and members.</p>
+            </div>
+          </div>
+          <div class="pillar">
+            <div class="pillar-icon">👶</div>
+            <div class="pillar-text">
+              <h4>Kids & Adults</h4>
+              <p>Dedicated programmes for every age from 4 to 60+.</p>
+            </div>
+          </div>
+          <div class="pillar">
+            <div class="pillar-icon">🏆</div>
+            <div class="pillar-text">
+              <h4>Competition Ready</h4>
+              <p>Compete locally, nationally and internationally with GB support.</p>
+            </div>
+          </div>
+        </div>
+        <div class="fade-up delay-4">
+          <a href="#programmes" class="btn btn-primary"><span>See Our Programmes</span></a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══ PROGRAMMES ═══ -->
+<section id="programmes">
+  <div class="container">
+    <div class="programmes-header">
+      <span class="section-label fade-up">Training Programmes</span>
+      <h2 class="section-title programmes-title fade-up delay-1">Train For<br>Your Goals</h2>
+      <p class="programmes-subtitle fade-up delay-2">Every programme is structured with the Gracie Barra curriculum — giving you a clear path from your first class to black belt.</p>
+    </div>
+    <div class="programmes-grid">
+      <div class="programme-card fade-up">
+        <div class="card-number">01</div>
+        <div class="card-icon">🥋</div>
+        <h3>Adults BJJ</h3>
+        <div class="card-tag">Ages 16+</div>
+        <p>Our flagship programme covers all aspects of Brazilian Jiu-Jitsu — takedowns, guard passing, submissions and self-defence. Suitable for all levels.</p>
+        <ul class="card-features">
+          <li>Fundamentals & Advanced tracks</li>
+          <li>Gi & No-Gi classes</li>
+          <li>Live sparring (rolling)</li>
+          <li>Competition preparation</li>
+        </ul>
+      </div>
+      <div class="programme-card featured fade-up delay-1">
+        <div class="card-number">02</div>
+        <div class="card-icon">👶</div>
+        <h3>Kids & Teens</h3>
+        <div class="card-tag">Ages 4–15</div>
+        <p>Build confidence, discipline and resilience. Our GB Kids programme uses age-appropriate methods to develop character alongside technique.</p>
+        <ul class="card-features">
+          <li>Little Champions (4–6 yrs)</li>
+          <li>Kids (7–12 yrs)</li>
+          <li>Teens (13–15 yrs)</li>
+          <li>Anti-bullying focus</li>
+        </ul>
+      </div>
+      <div class="programme-card fade-up delay-2">
+        <div class="card-number">03</div>
+        <div class="card-icon">💪</div>
+        <h3>No-Gi / Fitness</h3>
+        <div class="card-tag">All Levels</div>
+        <p>Grappling without the kimono. Fast-paced, athletic and a phenomenal workout. Perfect for MMA athletes and those who prefer shorts over gi.</p>
+        <ul class="card-features">
+          <li>Wrestling & leg locks</li>
+          <li>High-intensity drilling</li>
+          <li>Crossfit-style warm-ups</li>
+          <li>Great standalone workout</li>
+        </ul>
+      </div>
+    </div>
+    <div style="text-align:center; margin-top: 48px;">
+      <a href="#cta" class="btn btn-primary fade-up"><span>Book a Free Trial Class</span></a>
+    </div>
+  </div>
+</section>
+
+<!-- ═══ SCHEDULE ═══ -->
+<section id="schedule">
+  <div class="container">
+    <div class="schedule-header">
+      <div class="schedule-header-inner">
+        <div>
+          <span class="section-label fade-up">Class Timetable</span>
+          <h2 class="section-title schedule-title fade-up delay-1">When<br>We Train</h2>
+        </div>
+        <p class="schedule-note fade-right">All times are UK local time. Drop-ins welcome — just bring a gi if you have one!</p>
+      </div>
+    </div>
+    <div class="schedule-tabs fade-up">
+      <button class="tab-btn active" data-tab="weekday">Mon – Fri</button>
+      <button class="tab-btn" data-tab="weekend">Weekend</button>
+    </div>
+    <!-- Weekday Table -->
+    <table class="schedule-table active fade-up" id="tab-weekday">
+      <thead>
+        <tr>
+          <th>Time</th>
+          <th>Monday</th>
+          <th>Tuesday</th>
+          <th>Wednesday</th>
+          <th>Thursday</th>
+          <th>Friday</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>10:00</td>
+          <td><span class="class-badge">Adults BJJ</span></td>
+          <td>—</td>
+          <td><span class="class-badge">Adults BJJ</span></td>
+          <td>—</td>
+          <td><span class="class-badge">Adults BJJ</span></td>
+        </tr>
+        <tr>
+          <td>12:00</td>
+          <td>—</td>
+          <td><span class="class-badge no-gi">No-Gi</span></td>
+          <td>—</td>
+          <td><span class="class-badge no-gi">No-Gi</span></td>
+          <td>—</td>
+        </tr>
+        <tr>
+          <td>17:00</td>
+          <td><span class="class-badge kids">Kids BJJ</span></td>
+          <td><span class="class-badge kids">Kids BJJ</span></td>
+          <td><span class="class-badge kids">Kids BJJ</span></td>
+          <td><span class="class-badge kids">Kids BJJ</span></td>
+          <td><span class="class-badge kids">Kids BJJ</span></td>
+        </tr>
+        <tr>
+          <td>18:30</td>
+          <td><span class="class-badge">Fundamentals</span></td>
+          <td><span class="class-badge">Adults BJJ</span></td>
+          <td><span class="class-badge">Fundamentals</span></td>
+          <td><span class="class-badge">Adults BJJ</span></td>
+          <td><span class="class-badge no-gi">No-Gi</span></td>
+        </tr>
+        <tr>
+          <td>20:00</td>
+          <td><span class="class-badge">Advanced</span></td>
+          <td><span class="class-badge">Open Mat</span></td>
+          <td><span class="class-badge">Adults BJJ</span></td>
+          <td><span class="class-badge">Advanced</span></td>
+          <td>—</td>
+        </tr>
+      </tbody>
+    </table>
+    <!-- Weekend Table -->
+    <table class="schedule-table fade-up" id="tab-weekend">
+      <thead>
+        <tr>
+          <th>Time</th>
+          <th>Saturday</th>
+          <th>Sunday</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>09:00</td>
+          <td><span class="class-badge kids">Kids BJJ</span></td>
+          <td>—</td>
+        </tr>
+        <tr>
+          <td>10:00</td>
+          <td><span class="class-badge">Adults BJJ</span></td>
+          <td><span class="class-badge">Open Mat</span></td>
+        </tr>
+        <tr>
+          <td>11:30</td>
+          <td><span class="class-badge no-gi">No-Gi</span></td>
+          <td>—</td>
+        </tr>
+      </tbody>
+    </table>
+    <div class="schedule-cta fade-up">
+      <p>Can't make a class? <span>Get in touch</span> — we'll find a time that works for you.</p>
+      <a href="#contact" class="btn btn-primary"><span>Contact Us</span></a>
+    </div>
+  </div>
+</section>
+
+<!-- ═══ INSTRUCTORS ═══ -->
+<section id="instructors">
+  <div class="container">
+    <div class="instructors-header">
+      <span class="section-label fade-up">Meet The Team</span>
+      <h2 class="section-title fade-up delay-1" style="font-size: clamp(48px,6vw,80px)">World-Class<br>Instructors</h2>
+    </div>
+    <div class="instructors-grid">
+      <div class="instructor-card fade-up">
+        <div class="instructor-img">
+          <div class="instructor-placeholder">
+            <div class="instructor-monogram">JM</div>
+          </div>
+          <div class="instructor-belt belt-black"></div>
+          <div class="instructor-overlay"></div>
+        </div>
+        <div class="instructor-info">
+          <div class="instructor-name">Prof. João Melo</div>
+          <div class="instructor-title">Head Instructor · Black Belt 2nd Degree</div>
+          <p class="instructor-bio">10+ years teaching BJJ in London. Former regional champion, GB certified instructor and dedicated coach with a passion for building champions.</p>
+        </div>
+      </div>
+      <div class="instructor-card fade-up delay-1">
+        <div class="instructor-img">
+          <div class="instructor-placeholder">
+            <div class="instructor-monogram">SA</div>
+          </div>
+          <div class="instructor-belt belt-brown"></div>
+          <div class="instructor-overlay"></div>
+        </div>
+        <div class="instructor-info">
+          <div class="instructor-name">Coach Sofia Alves</div>
+          <div class="instructor-title">Kids Programme Lead · Brown Belt</div>
+          <p class="instructor-bio">Specialist in children's BJJ education. Trained with GB Brazil, Sofia brings patience, creativity and world-class technique to every kids class.</p>
+        </div>
+      </div>
+      <div class="instructor-card fade-up delay-2">
+        <div class="instructor-img">
+          <div class="instructor-placeholder">
+            <div class="instructor-monogram">MK</div>
+          </div>
+          <div class="instructor-belt belt-black"></div>
+          <div class="instructor-overlay"></div>
+        </div>
+        <div class="instructor-info">
+          <div class="instructor-name">Prof. Marcus King</div>
+          <div class="instructor-title">No-Gi & Competition Coach · Black Belt</div>
+          <p class="instructor-bio">ADCC Submission Wrestling veteran and British champion. Marcus leads our competition team and No-Gi programme with elite-level expertise.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══ BENEFITS ═══ -->
+<section id="benefits">
+  <div class="container benefits-inner">
+    <div class="benefits-header">
+      <span class="section-label fade-up">Why Brazilian Jiu-Jitsu</span>
+      <h2 class="section-title benefits-title fade-up delay-1">The Art That<br>Changes Lives</h2>
+    </div>
+    <div class="benefits-grid">
+      <div class="benefit-item fade-up">
+        <div class="benefit-num">01</div>
+        <div class="benefit-icon">🛡️</div>
+        <h4>Real Self-Defence</h4>
+        <p>Proven on the street and in competition — BJJ teaches you to handle any situation from a position of control.</p>
+      </div>
+      <div class="benefit-item fade-up delay-1">
+        <div class="benefit-num">02</div>
+        <div class="benefit-icon">🔥</div>
+        <h4>Total Fitness</h4>
+        <p>Strength, cardio, flexibility and coordination all improve rapidly. You'll get in the best shape of your life while learning.</p>
+      </div>
+      <div class="benefit-item fade-up delay-2">
+        <div class="benefit-num">03</div>
+        <div class="benefit-icon">🧠</div>
+        <h4>Mental Toughness</h4>
+        <p>Constant problem-solving under pressure builds a resilient, calm mindset that carries into every area of life.</p>
+      </div>
+      <div class="benefit-item fade-up delay-3">
+        <div class="benefit-num">04</div>
+        <div class="benefit-icon">🤝</div>
+        <h4>Community & Belonging</h4>
+        <p>The mat creates bonds unlike any other sport. Our school is a diverse, welcoming family from all walks of life.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══ TESTIMONIALS ═══ -->
+<section id="testimonials">
+  <div class="container">
+    <div class="testimonials-header">
+      <div>
+        <span class="section-label fade-up">Student Reviews</span>
+        <h2 class="section-title testimonials-title fade-up delay-1">What Our<br>Members Say</h2>
+      </div>
+      <div class="reviews-badge fade-up delay-2">
+        <div>
+          <div class="reviews-stars">★★★★★</div>
+        </div>
+        <div class="reviews-info">
+          <strong>5.0</strong>
+          <span>Google Reviews</span>
+        </div>
+      </div>
+    </div>
+    <div class="testimonials-grid">
+      <div class="testimonial-card fade-up">
+        <div class="testimonial-stars">★★★★★</div>
+        <p class="testimonial-text">"I walked in knowing nothing about BJJ and left feeling completely welcome. The instructors are incredibly patient and the community here is unlike anything I've experienced at other gyms."</p>
+        <div class="testimonial-author">
+          <div class="author-avatar">JR</div>
+          <div class="author-info">
+            <div class="name">James R.</div>
+            <div class="since">Member since 2022 · White Belt</div>
+          </div>
+        </div>
+      </div>
+      <div class="testimonial-card fade-up delay-1">
+        <div class="testimonial-stars">★★★★★</div>
+        <p class="testimonial-text">"My son has been training in the Kids programme for 18 months. His confidence, discipline and focus at school have genuinely transformed. Best decision we ever made as a family."</p>
+        <div class="testimonial-author">
+          <div class="author-avatar">LM</div>
+          <div class="author-info">
+            <div class="name">Laura M.</div>
+            <div class="since">Parent · GB Haringey Family</div>
+          </div>
+        </div>
+      </div>
+      <div class="testimonial-card fade-up delay-2">
+        <div class="testimonial-stars">★★★★★</div>
+        <p class="testimonial-text">"Came for fitness, stayed for the sport. Two years later I've competed at three tournaments and won two of them. The coaches here genuinely invest in your progress."</p>
+        <div class="testimonial-author">
+          <div class="author-avatar">AO</div>
+          <div class="author-info">
+            <div class="name">Adaeze O.</div>
+            <div class="since">Member since 2021 · Blue Belt</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══ CTA ═══ -->
+<section id="cta">
+  <div class="cta-bg"></div>
+  <div class="container">
+    <div class="cta-content">
+      <span class="section-label fade-up" style="justify-content:center">Start Today</span>
+      <h2 class="section-title cta-title fade-up delay-1">Your First<br>Class Is<br>On Us</h2>
+      <p class="cta-body fade-up delay-2">
+        No experience required. No long-term commitment. Just show up, train and discover why Brazilian Jiu-Jitsu is the world's fastest-growing martial art.
+      </p>
+      <div class="cta-actions fade-up delay-3">
+        <a href="#contact" class="btn btn-primary"><span>Book Free Trial</span></a>
+        <a href="tel:+442012345678" class="btn btn-outline">Call Us Now</a>
+      </div>
+      <div class="cta-trust fade-up delay-4">
+        <div class="cta-trust-item">No experience needed</div>
+        <div class="cta-trust-item">All ages welcome</div>
+        <div class="cta-trust-item">No contract to sign</div>
+        <div class="cta-trust-item">Equipment provided</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══ FAQ ═══ -->
+<section id="faq">
+  <div class="container">
+    <div class="faq-grid">
+      <div class="faq-sidebar">
+        <span class="section-label fade-left">FAQ</span>
+        <h2 class="section-title faq-sidebar-title fade-left delay-1">Got<br>Questions?</h2>
+        <p class="fade-left delay-2">Everything you need to know before you walk through the door. If you don't find your answer here, give us a call.</p>
+        <a href="#contact" class="btn btn-primary fade-left delay-3"><span>Contact Us</span></a>
+      </div>
+      <div class="faq-list fade-up">
+        <div class="faq-item">
+          <button class="faq-question">
+            Do I need experience to start? <span class="faq-icon">+</span>
+          </button>
+          <div class="faq-answer">
+            <p>Absolutely not. We welcome complete beginners every week. Our Fundamentals programme is specifically designed for new students, so you'll never feel out of depth. Every black belt started as a white belt with zero experience.</p>
+          </div>
+        </div>
+        <div class="faq-item">
+          <button class="faq-question">
+            What do I wear to my first class? <span class="faq-icon">+</span>
+          </button>
+          <div class="faq-answer">
+            <p>For your trial class, comfortable athletic wear is fine — shorts and a t-shirt work great. If you decide to join, you'll need a gi (Brazilian Jiu-Jitsu uniform), which you can purchase from us or online. We can loan one for your first visit if needed.</p>
+          </div>
+        </div>
+        <div class="faq-item">
+          <button class="faq-question">
+            How much does membership cost? <span class="faq-icon">+</span>
+          </button>
+          <div class="faq-answer">
+            <p>We offer flexible monthly memberships with unlimited classes. Prices start from £80/month for adults, with discounts for students, families and annual payments. Your first trial class is completely free with no obligation.</p>
+          </div>
+        </div>
+        <div class="faq-item">
+          <button class="faq-question">
+            Is BJJ safe for kids? <span class="faq-icon">+</span>
+          </button>
+          <div class="faq-answer">
+            <p>Yes — Brazilian Jiu-Jitsu is one of the safest martial arts for children. Our GB Kids curriculum emphasises controlled technique over strength, with no striking. All coaches hold enhanced DBS checks and first-aid certificates. Safety is our top priority.</p>
+          </div>
+        </div>
+        <div class="faq-item">
+          <button class="faq-question">
+            Can I train if I'm not fit? <span class="faq-icon">+</span>
+          </button>
+          <div class="faq-answer">
+            <p>100%. BJJ is famous for being accessible regardless of fitness level — the technique is everything. Fitness will improve naturally as you train. Many members say BJJ is the best exercise programme they've ever followed, simply because it doesn't feel like exercise.</p>
+          </div>
+        </div>
+        <div class="faq-item">
+          <button class="faq-question">
+            Where are you located? <span class="faq-icon">+</span>
+          </button>
+          <div class="faq-answer">
+            <p>We're based in Haringey, North London, with easy access from Finsbury Park, Manor House and Turnpike Lane stations. Full address and directions are in our Contact section below. Free parking is available on evenings and weekends.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══ CONTACT ═══ -->
+<section id="contact">
+  <div class="container">
+    <div class="contact-grid">
+      <div>
+        <span class="section-label fade-up">Find Us</span>
+        <h2 class="section-title contact-title fade-up delay-1">Let's Talk<br>BJJ</h2>
+        <div class="contact-details fade-up delay-2">
+          <div class="contact-item">
+            <div class="contact-item-icon">📍</div>
+            <div class="contact-item-info">
+              <h4>Address</h4>
+              <p>Gracie Barra Haringey<br>Haringey, London, N4</p>
+            </div>
+          </div>
+          <div class="contact-item">
+            <div class="contact-item-icon">📞</div>
+            <div class="contact-item-info">
+              <h4>Phone</h4>
+              <p><a href="tel:+442012345678" style="color:inherit">+44 (0)20 1234 5678</a></p>
+            </div>
+          </div>
+          <div class="contact-item">
+            <div class="contact-item-icon">✉️</div>
+            <div class="contact-item-info">
+              <h4>Email</h4>
+              <p><a href="mailto:info@gbharingey.com" style="color:inherit">info@gbharingey.com</a></p>
+            </div>
+          </div>
+          <div class="contact-item">
+            <div class="contact-item-icon">🕐</div>
+            <div class="contact-item-info">
+              <h4>Reception Hours</h4>
+              <p>Mon–Fri: 9:00am – 9:00pm<br>Sat–Sun: 9:00am – 1:00pm</p>
+            </div>
+          </div>
+        </div>
+        <div class="map-frame fade-up delay-3">
+          <iframe
+            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d9923.13!2d-0.1!3d51.57!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zNTHCsDM0JzEyLjAiTiAwwrAwNicwMC4wIlc!5e0!3m2!1sen!2suk!4v1"
+            allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"
+            title="GB Haringey Location">
+          </iframe>
+          <div class="map-overlay">
+            <div class="map-label">Gracie Barra <span>Haringey</span></div>
+          </div>
+        </div>
+      </div>
+      <div class="contact-form fade-right delay-1">
+        <h3>Book Your Free Trial</h3>
+        <form id="trialForm" onsubmit="handleForm(event)">
+          <div class="form-row">
+            <div class="form-group">
+              <input type="text" placeholder="First Name" required>
+            </div>
+            <div class="form-group">
+              <input type="text" placeholder="Last Name" required>
+            </div>
+          </div>
+          <div class="form-group">
+            <input type="email" placeholder="Email Address" required>
+          </div>
+          <div class="form-group">
+            <input type="tel" placeholder="Phone Number">
+          </div>
+          <div class="form-group">
+            <select>
+              <option value="" disabled selected>I'm interested in...</option>
+              <option>Adults BJJ (Fundamentals)</option>
+              <option>Adults BJJ (Advanced)</option>
+              <option>No-Gi / Grappling</option>
+              <option>Kids BJJ (4–6)</option>
+              <option>Kids BJJ (7–12)</option>
+              <option>Teens BJJ (13–15)</option>
+              <option>Not sure yet</option>
+            </select>
+          </div>
+          <div class="form-group">
+            <textarea placeholder="Any questions or special requirements? (optional)"></textarea>
+          </div>
+          <button type="submit" class="btn btn-primary form-submit"><span>Send My Request</span></button>
+        </form>
+        <div id="formSuccess" style="display:none; text-align:center; padding:40px 0;">
+          <div style="font-size:48px; margin-bottom:16px;">🥋</div>
+          <h3 style="font-family:var(--font-head);font-size:28px;text-transform:uppercase;margin-bottom:12px;color:var(--red)">OSS! You're In</h3>
+          <p style="color:rgba(255,255,255,0.6);font-size:15px;line-height:1.6">We'll be in touch within 24 hours to arrange your free trial class. Get ready to train!</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══ FOOTER ═══ -->
+<footer id="footer">
+  <div class="container">
+    <div class="footer-grid">
+      <div class="footer-brand">
+        <div class="footer-logo">
+          <div class="logo-icon">GB</div>
+          Gracie Barra Haringey
+        </div>
+        <p>Part of the world's largest BJJ organisation — bringing world-class Brazilian Jiu-Jitsu to the heart of North London since 2014.</p>
+        <div class="footer-social">
+          <a href="#" class="social-link" aria-label="Instagram">📸</a>
+          <a href="#" class="social-link" aria-label="Facebook">👍</a>
+          <a href="#" class="social-link" aria-label="YouTube">▶️</a>
+          <a href="#" class="social-link" aria-label="WhatsApp">💬</a>
+        </div>
+      </div>
+      <div class="footer-col">
+        <h4>Programmes</h4>
+        <ul>
+          <li><a href="#programmes">Adults BJJ</a></li>
+          <li><a href="#programmes">Kids BJJ</a></li>
+          <li><a href="#programmes">No-Gi / Grappling</a></li>
+          <li><a href="#schedule">View Timetable</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>Academy</h4>
+        <ul>
+          <li><a href="#about">About Us</a></li>
+          <li><a href="#instructors">Instructors</a></li>
+          <li><a href="#testimonials">Reviews</a></li>
+          <li><a href="#faq">FAQ</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>Get Started</h4>
+        <ul>
+          <li><a href="#cta">Free Trial Class</a></li>
+          <li><a href="#contact">Contact Us</a></li>
+          <li><a href="tel:+442012345678">+44 20 1234 5678</a></li>
+          <li><a href="mailto:info@gbharingey.com">info@gbharingey.com</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>© 2024 Gracie Barra Haringey. All rights reserved. | <a href="#">Privacy Policy</a></p>
+      <div class="gb-affiliation">
+        <div class="gb-badge">GB</div>
+        Official Gracie Barra Affiliate
+      </div>
+    </div>
+  </div>
+</footer>
+
+<!-- ═══ JAVASCRIPT ═══ -->
+<script>
+  /* NAV SCROLL */
+  const nav = document.getElementById('nav');
+  window.addEventListener('scroll', () => {
+    nav.classList.toggle('scrolled', window.scrollY > 40);
+  }, { passive: true });
+
+  /* HAMBURGER MENU */
+  const hamburger = document.getElementById('hamburger');
+  const mobileMenu = document.getElementById('mobileMenu');
+  hamburger.addEventListener('click', () => {
+    hamburger.classList.toggle('open');
+    mobileMenu.classList.toggle('open');
+    document.body.style.overflow = mobileMenu.classList.contains('open') ? 'hidden' : '';
+  });
+  document.querySelectorAll('.mobile-link, .nav-mobile .btn').forEach(el => {
+    el.addEventListener('click', () => {
+      hamburger.classList.remove('open');
+      mobileMenu.classList.remove('open');
+      document.body.style.overflow = '';
+    });
+  });
+
+  /* INTERSECTION OBSERVER — FADE ANIMATIONS */
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add('visible');
+      }
+    });
+  }, { threshold: 0.12, rootMargin: '0px 0px -40px 0px' });
+
+  document.querySelectorAll('.fade-up, .fade-left, .fade-right').forEach(el => {
+    observer.observe(el);
+  });
+
+  /* COUNT-UP ANIMATION */
+  const countEls = document.querySelectorAll('.count');
+  const countObserver = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        const el = entry.target;
+        const target = parseInt(el.dataset.target);
+        const duration = 1600;
+        const start = performance.now();
+        const animate = (now) => {
+          const elapsed = now - start;
+          const progress = Math.min(elapsed / duration, 1);
+          const eased = 1 - Math.pow(1 - progress, 3);
+          el.textContent = Math.round(eased * target);
+          if (progress < 1) requestAnimationFrame(animate);
+        };
+        requestAnimationFrame(animate);
+        countObserver.unobserve(el);
+      }
+    });
+  }, { threshold: 0.5 });
+  countEls.forEach(el => countObserver.observe(el));
+
+  /* SCHEDULE TABS */
+  const tabBtns = document.querySelectorAll('.tab-btn');
+  const tables = document.querySelectorAll('.schedule-table');
+  tabBtns.forEach(btn => {
+    btn.addEventListener('click', () => {
+      const tab = btn.dataset.tab;
+      tabBtns.forEach(b => b.classList.remove('active'));
+      tables.forEach(t => t.classList.remove('active'));
+      btn.classList.add('active');
+      document.getElementById('tab-' + tab).classList.add('active');
+    });
+  });
+
+  /* FAQ ACCORDION */
+  document.querySelectorAll('.faq-question').forEach(q => {
+    q.addEventListener('click', () => {
+      const item = q.closest('.faq-item');
+      const isOpen = item.classList.contains('open');
+      document.querySelectorAll('.faq-item').forEach(i => i.classList.remove('open'));
+      if (!isOpen) item.classList.add('open');
+    });
+  });
+
+  /* FORM SUBMIT */
+  function handleForm(e) {
+    e.preventDefault();
+    document.getElementById('trialForm').style.display = 'none';
+    document.getElementById('formSuccess').style.display = 'block';
+  }
+
+  /* SMOOTH SCROLL for all anchor links */
+  document.querySelectorAll('a[href^="#"]').forEach(a => {
+    a.addEventListener('click', e => {
+      const target = document.querySelector(a.getAttribute('href'));
+      if (target) {
+        e.preventDefault();
+        const offset = 72;
+        const top = target.getBoundingClientRect().top + window.scrollY - offset;
+        window.scrollTo({ top, behavior: 'smooth' });
+      }
+    });
+  });
+
+  /* HERO PARALLAX — subtle */
+  const heroBg = document.querySelector('.hero-image');
+  window.addEventListener('scroll', () => {
+    if (heroBg && window.scrollY < window.innerHeight) {
+      heroBg.style.transform = `translateY(${window.scrollY * 0.25}px)`;
+    }
+  }, { passive: true });
+</script>
+</body>
+</html>

@@ -7,7 +7,6 @@
 ## Quick Start
 
 ```bash
-cd storefront
 npm install
 npm run dev
 ```

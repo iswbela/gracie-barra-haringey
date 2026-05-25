@@ -42,41 +42,44 @@ export function Hero() {
         }} />
       </div>
 
-      {/* Right side decorative panel */}
+      {/* Right side video panel */}
       <div style={{
         position: "absolute",
         right: 0,
         top: 0,
         bottom: 0,
         width: "58%",
-        background: `
-          linear-gradient(to right, rgba(8,8,8,1) 0%, rgba(8,8,8,0) 30%),
-          linear-gradient(to top, rgba(8,8,8,0.8) 0%, transparent 40%),
-          linear-gradient(135deg, #1a0505 0%, #2d1010 30%, #1a1a1a 60%, #0d0d0d 100%)
-        `,
         overflow: "hidden",
       }}>
+        <video
+          autoPlay
+          muted
+          loop
+          playsInline
+          style={{
+            position: "absolute",
+            inset: 0,
+            width: "100%",
+            height: "100%",
+            objectFit: "cover",
+          }}
+        >
+          <source src="/media/highlight.mp4" type="video/mp4" />
+        </video>
+        {/* Left fade overlay */}
         <div style={{
           position: "absolute",
           inset: 0,
-          background: "radial-gradient(ellipse 60% 80% at 65% 55%, rgba(200,16,46,0.08) 0%, transparent 60%)",
+          background: "linear-gradient(to right, rgba(8,8,8,1) 0%, rgba(8,8,8,0) 30%)",
+          pointerEvents: "none",
         }} />
-        {/* Large GB monogram watermark */}
+        {/* Bottom fade overlay */}
         <div style={{
           position: "absolute",
-          bottom: "10%",
-          right: "8%",
-          fontFamily: "var(--font-head)",
-          fontWeight: 900,
-          fontSize: "28vw",
-          color: "rgba(200,16,46,0.04)",
-          lineHeight: 1,
-          userSelect: "none",
+          inset: 0,
+          background: "linear-gradient(to top, rgba(8,8,8,0.7) 0%, transparent 40%)",
           pointerEvents: "none",
-          letterSpacing: "-0.05em",
-        }}>
-          GB
-        </div>
+        }} />
       </div>
 
       {/* Hero content */}

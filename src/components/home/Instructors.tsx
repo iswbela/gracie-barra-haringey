@@ -5,7 +5,7 @@ import { useScrollAnimation } from "@/hooks/useScrollAnimation";
 const instructors = [
   {
     monogram: "JM",
-    photo:    "/media/Gemini_Generated_Image_meou16meou16meou.png",
+    photo:    "/media/Gemini_Generated_Image_nh4zhtnh4zhtnh4z.png",
     name:     "Prof. João Melo",
     title:    "Head Instructor · Black Belt 2nd Degree",
     bio:      "10+ years teaching BJJ in London. Former regional champion, GB certified instructor and dedicated coach with a passion for building champions.",
@@ -23,7 +23,7 @@ const instructors = [
   },
   {
     monogram: "MK",
-    photo:    "/media/watermarked_img_18198801592340426773.jpg",
+    photo:    "/media/Gemini_Generated_Image_gjtl19gjtl19gjtl.png",
     name:     "Prof. Marcus King",
     title:    "No-Gi & Competition Coach · Black Belt",
     bio:      "ADCC Submission Wrestling veteran and British champion. Marcus leads our competition team and No-Gi programme with elite-level expertise.",

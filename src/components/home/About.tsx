@@ -50,7 +50,7 @@ export function About() {
               {/* Background photo */}
               {/* eslint-disable-next-line @next/next/no-img-element */}
               <img
-                src="/media/WhatsApp-Image-2025-01-29-at-14.25.09.jpeg"
+                src="/media/Gemini_Generated_Image_9z0elr9z0elr9z0e.png"
                 alt=""
                 style={{
                   position: "absolute",

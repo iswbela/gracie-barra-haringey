@@ -47,6 +47,20 @@ export function About() {
               background: "var(--dark-2)",
               overflow: "hidden",
             }}>
+              {/* Background photo */}
+              {/* eslint-disable-next-line @next/next/no-img-element */}
+              <img
+                src="/media/WhatsApp-Image-2025-01-29-at-14.25.09.jpeg"
+                alt=""
+                style={{
+                  position: "absolute",
+                  inset: 0,
+                  width: "100%",
+                  height: "100%",
+                  objectFit: "cover",
+                  objectPosition: "center",
+                }}
+              />
               {/* Overlay patterns */}
               <div style={{
                 position: "absolute",
@@ -80,26 +94,6 @@ export function About() {
                   &ldquo;Jiu-Jitsu is for everyone. The mat is a great equaliser.&rdquo;
                 </p>
               </div>
-            </div>
-
-            {/* Accent badge */}
-            <div style={{
-              position: "absolute",
-              top: "-16px",
-              right: "-16px",
-              width: "72px",
-              height: "72px",
-              background: "var(--red)",
-              zIndex: 4,
-              display: "flex",
-              alignItems: "center",
-              justifyContent: "center",
-              fontFamily: "var(--font-head)",
-              fontWeight: 900,
-              fontSize: "28px",
-              color: "var(--white)",
-            }}>
-              GB
             </div>
 
             {/* Year badge */}

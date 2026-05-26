@@ -64,7 +64,7 @@ export function Hero() {
             objectFit: "cover",
           }}
         >
-          <source src="/media/highlight.mp4" type="video/mp4" />
+          <source src="/media/training-highlight.mp4" type="video/mp4" />
         </video>
         {/* Left fade overlay */}
         <div style={{

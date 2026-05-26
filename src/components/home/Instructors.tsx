@@ -5,6 +5,7 @@ import { useScrollAnimation } from "@/hooks/useScrollAnimation";
 const instructors = [
   {
     monogram: "JM",
+    photo:    "/media/Gemini_Generated_Image_meou16meou16meou.png",
     name:     "Prof. João Melo",
     title:    "Head Instructor · Black Belt 2nd Degree",
     bio:      "10+ years teaching BJJ in London. Former regional champion, GB certified instructor and dedicated coach with a passion for building champions.",
@@ -13,6 +14,7 @@ const instructors = [
   },
   {
     monogram: "SA",
+    photo:    "/media/Gemini_Generated_Image_y31qzly31qzly31q.png",
     name:     "Coach Sofia Alves",
     title:    "Kids Programme Lead · Brown Belt",
     bio:      "Specialist in children's BJJ education. Trained with GB Brazil, Sofia brings patience, creativity and world-class technique to every kids class.",
@@ -21,6 +23,7 @@ const instructors = [
   },
   {
     monogram: "MK",
+    photo:    "/media/watermarked_img_18198801592340426773.jpg",
     name:     "Prof. Marcus King",
     title:    "No-Gi & Competition Coach · Black Belt",
     bio:      "ADCC Submission Wrestling veteran and British champion. Marcus leads our competition team and No-Gi programme with elite-level expertise.",
@@ -82,25 +85,20 @@ export function Instructors() {
                   background: "linear-gradient(to bottom, transparent 50%, rgba(8,8,8,0.9) 100%)",
                   zIndex: 1,
                 }} />
-                {/* Monogram placeholder */}
-                <div style={{
-                  position: "absolute",
-                  inset: 0,
-                  display: "flex",
-                  flexDirection: "column",
-                  alignItems: "center",
-                  justifyContent: "center",
-                }}>
-                  <div style={{
-                    fontFamily: "var(--font-head)",
-                    fontWeight: 900,
-                    fontSize: "96px",
-                    color: "rgba(200,16,46,0.15)",
-                    lineHeight: 1,
-                  }}>
-                    {inst.monogram}
-                  </div>
-                </div>
+                {/* Instructor photo */}
+                {/* eslint-disable-next-line @next/next/no-img-element */}
+                <img
+                  src={inst.photo}
+                  alt={inst.name}
+                  style={{
+                    position: "absolute",
+                    inset: 0,
+                    width: "100%",
+                    height: "100%",
+                    objectFit: "cover",
+                    objectPosition: "center top",
+                  }}
+                />
                 {/* Belt strip */}
                 <div style={{
                   position: "absolute",

@@ -26,8 +26,9 @@ let _cache: CatalogProduct[] | null = null;
 export function getCatalogProducts(): CatalogProduct[] {
   if (_cache) return _cache;
 
-  // Try multiple locations: project root, .old sibling, original fallback
+  // Try multiple locations: repo data folder first, then legacy local paths
   const dirs = [
+    path.resolve(process.cwd(), "public/data"),
     path.resolve(process.cwd(), "teste"),
     path.resolve(process.cwd(), "..", "gracie-barra-haringey.old", "teste"),
     path.resolve(process.cwd(), "..", "teste"),

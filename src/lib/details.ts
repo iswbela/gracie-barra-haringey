@@ -23,7 +23,7 @@ export function getDetailProducts(): DetailProduct[] {
     if (fs.existsSync(primary)) { filePath = primary; break; }
     if (fs.existsSync(fallback)) { filePath = fallback; break; }
   }
-  if (!filePath) throw new Error("products JSON not found in any expected location");
+  if (!filePath) { _cache = []; return _cache; }
 
   const raw = fs.readFileSync(filePath, "utf-8");
   const data = JSON.parse(raw) as { products: DetailProduct[] };
@@ -42,30 +42,8 @@ export function getProductById(id: number): DetailProduct | undefined {
 }
 
 // ─── Body HTML parsing ────────────────────────────────────────────────────────
-
-export function stripHtml(html: string): string {
-  return html.replace(/<[^>]+>/g, " ").replace(/\s+/g, " ").trim();
-}
-
-export function extractListItems(html: string): string[] {
-  const matches = html.match(/<li[^>]*>(.*?)<\/li>/gi) ?? [];
-  return matches.map((m) =>
-    m
-      .replace(/<[^>]+>/g, "")
-      .replace(/&[a-z]+;/gi, (e) => {
-        const entities: Record<string, string> = {
-          "&amp;": "&",
-          "&lt;": "<",
-          "&gt;": ">",
-          "&quot;": '"',
-          "&#39;": "'",
-          "&nbsp;": " ",
-        };
-        return entities[e] ?? e;
-      })
-      .trim()
-  );
-}
+// Re-exported from htmlUtils for server-side convenience
+export { stripHtml, extractListItems } from "@/lib/htmlUtils";
 
 // ─── Related products ─────────────────────────────────────────────────────────
 

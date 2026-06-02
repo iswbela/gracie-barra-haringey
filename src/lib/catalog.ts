@@ -42,7 +42,7 @@ export function getCatalogProducts(): CatalogProduct[] {
     if (fs.existsSync(secondary)) { filePath = secondary; break; }
     if (fs.existsSync(fallback))  { filePath = fallback;  break; }
   }
-  if (!filePath) throw new Error("catalog JSON not found in any expected location");
+  if (!filePath) { _cache = []; return _cache; }
 
   const raw  = fs.readFileSync(filePath, "utf-8");
   const data = JSON.parse(raw) as { products: CatalogProduct[] };

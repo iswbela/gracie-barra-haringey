@@ -4,7 +4,7 @@ import { useState } from "react";
 import type { DetailProduct } from "@/types/product";
 import { useCartStore } from "@/store/cartStore";
 import { useToastStore } from "@/store/toastStore";
-import { extractListItems, stripHtml } from "@/lib/details";
+import { extractListItems, stripHtml } from "@/lib/htmlUtils";
 
 function formatPrice(n: number) {
   return new Intl.NumberFormat("pt-BR", { style: "currency", currency: "BRL" }).format(n);

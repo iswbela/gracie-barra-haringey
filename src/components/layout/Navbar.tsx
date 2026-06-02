@@ -294,7 +294,7 @@ export function Navbar() {
       {/* Inline styles for hover effects & responsive */}
       <style>{`
         .nav-link-item::after {
-          content: '';
+          content: "";
           position: absolute;
           bottom: -4px;
           left: 0;

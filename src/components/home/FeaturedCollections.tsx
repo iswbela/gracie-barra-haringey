@@ -81,7 +81,7 @@ export function FeaturedCollections({ products }: Props) {
   const img = (i: number) => picks[i]?.images[0]?.src ?? "";
 
   // Group by product_type for collection names
-  const types = [...new Set(products.map((p) => p.product_type).filter(Boolean))];
+  const types = Array.from(new Set(products.map((p) => p.product_type).filter(Boolean)));
 
   return (
     <section className="py-20 bg-neutral-50 dark:bg-neutral-900">

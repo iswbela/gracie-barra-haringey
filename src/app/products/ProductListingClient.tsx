@@ -62,12 +62,14 @@ function ProductCard({ product }: { product: CatalogProduct }) {
       style={{
         position: "relative",
         background: "var(--dark-2)",
+        display: "flex",
+        flexDirection: "column",
         borderTop: "3px solid transparent",
         transition: "transform 0.35s var(--ease), box-shadow 0.35s var(--ease), border-top-color 0.25s",
       }}
       className="shop-product-card"
     >
-      <Link href={`/products/${product.handle}`} style={{ display: "block", textDecoration: "none", color: "inherit" }}>
+      <Link href={`/products/${product.handle}`} style={{ display: "flex", flexDirection: "column", flex: 1, textDecoration: "none", color: "inherit" }}>
         {/* Image area */}
         <div style={{ position: "relative", aspectRatio: "1 / 1.15", overflow: "hidden", background: "var(--dark-3)" }}>
           <Image

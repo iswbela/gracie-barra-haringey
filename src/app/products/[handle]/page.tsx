@@ -72,7 +72,8 @@ function RelatedCard({ product }: { product: CatalogProduct }) {
       style={{
         position: "relative",
         background: "var(--dark-2)",
-        display: "block",
+        display: "flex",
+        flexDirection: "column",
         borderTop: "3px solid transparent",
         transition: "transform 0.35s var(--ease), box-shadow 0.35s var(--ease), border-top-color 0.25s",
         textDecoration: "none",

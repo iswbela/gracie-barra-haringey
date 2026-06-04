@@ -96,7 +96,8 @@ export function YouMayAlsoLike({ products }: Props) {
                 style={{
                   position: "relative",
                   background: "var(--dark-2)",
-                  display: "block",
+                  display: "flex",
+                  flexDirection: "column",
                   borderTop: "3px solid transparent",
                   transition: "transform 0.35s var(--ease), box-shadow 0.35s var(--ease), border-color 0.25s",
                   cursor: "pointer",
@@ -105,7 +106,7 @@ export function YouMayAlsoLike({ products }: Props) {
               >
                 <Link
                   href={`/products/${product.handle}`}
-                  style={{ display: "block", textDecoration: "none", color: "inherit" }}
+                  style={{ display: "flex", flexDirection: "column", flex: 1, textDecoration: "none", color: "inherit" }}
                 >
                   {/* Image */}
                   <div style={{

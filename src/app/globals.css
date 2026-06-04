@@ -12,11 +12,11 @@
   --red-dark:   #9E0B22;
   --red-light:  #E8152F;
   --black:      #080808;
-  --dark:       #111111;
-  --dark-2:     #1A1A1A;
-  --dark-3:     #242424;
-  --grey:       #888888;
-  --grey-light: #CCCCCC;
+  --dark:       #f8f8f8;
+  --dark-2:     #f0f0f0;
+  --dark-3:     #e8e8e8;
+  --grey:       #555555;
+  --grey-light: #888888;
   --white:      #FFFFFF;
   --off-white:  #F4F4F4;
   --font-head:  'Barlow Condensed', sans-serif;
@@ -38,8 +38,8 @@ html {
 
 body {
   font-family: var(--font-body);
-  background: var(--black);
-  color: var(--white);
+  background: var(--white);
+  color: var(--black);
   overflow-x: hidden;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
@@ -55,7 +55,7 @@ button { cursor: pointer; border: none; background: none; font-family: inherit; 
 ═══════════════════════════════════════════ */
 ::-webkit-scrollbar { width: 6px; }
 ::-webkit-scrollbar-track { background: transparent; }
-::-webkit-scrollbar-thumb { background: var(--dark-3); }
+::-webkit-scrollbar-thumb { background: var(--grey-light); }
 
 /* ═══════════════════════════════════════════
    UTILITY CLASSES
@@ -91,7 +91,7 @@ button { cursor: pointer; border: none; background: none; font-family: inherit; 
   font-weight: 800;
   text-transform: uppercase;
   line-height: 0.95;
-  color: var(--white);
+  color: var(--black);
 }
 
 /* BUTTONS */
@@ -126,13 +126,13 @@ button { cursor: pointer; border: none; background: none; font-family: inherit; 
 .btn-primary span { position: relative; z-index: 1; }
 .btn-outline {
   background: transparent;
-  color: var(--white);
-  border: 1px solid rgba(255,255,255,0.4);
+  color: var(--black);
+  border: 1px solid rgba(0,0,0,0.35);
 }
 .btn-outline:hover {
-  background: var(--white);
-  color: var(--black);
-  border-color: var(--white);
+  background: var(--black);
+  color: var(--white);
+  border-color: var(--black);
 }
 .btn-arrow::after { content: '→'; font-family: monospace; font-size: 18px; }
 
@@ -189,9 +189,9 @@ button { cursor: pointer; border: none; background: none; font-family: inherit; 
 ═══════════════════════════════════════════ */
 input, select, textarea {
   width: 100%;
-  background: var(--dark-2);
-  border: 1px solid rgba(255,255,255,0.08);
-  color: var(--white);
+  background: var(--white);
+  border: 1px solid rgba(0,0,0,0.15);
+  color: var(--black);
   font-family: var(--font-body);
   font-size: 14px;
   padding: 14px 18px;
@@ -200,9 +200,9 @@ input, select, textarea {
   -webkit-appearance: none;
   border-radius: 0;
 }
-input::placeholder, textarea::placeholder { color: rgba(255,255,255,0.25); }
+input::placeholder, textarea::placeholder { color: rgba(0,0,0,0.35); }
 input:focus, select:focus, textarea:focus { border-color: var(--red); }
-select option { background: var(--dark-2); }
+select option { background: var(--white); }
 textarea { resize: vertical; min-height: 100px; }
 
 /* ═══════════════════════════════════════════
@@ -231,7 +231,7 @@ textarea { resize: vertical; min-height: 100px; }
   100% { background-position:  200% 0; }
 }
 .skeleton-shimmer {
-  background: linear-gradient(90deg, var(--dark-2) 25%, var(--dark-3) 50%, var(--dark-2) 75%);
+  background: linear-gradient(90deg, #e8e8e8 25%, #d8d8d8 50%, #e8e8e8 75%);
   background-size: 200% 100%;
   animation: shimmer 1.5s infinite;
 }

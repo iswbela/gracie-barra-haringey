@@ -36,7 +36,7 @@ export function Testimonials() {
     <section
       id="testimonials"
       ref={ref as React.RefObject<HTMLElement>}
-      style={{ padding: "120px 0", background: "var(--dark)" }}
+      style={{ padding: "120px 0", background: "var(--white)" }}
     >
       <div className="container">
         {/* Header */}
@@ -58,7 +58,7 @@ export function Testimonials() {
             display: "flex",
             alignItems: "center",
             gap: "12px",
-            border: "1px solid rgba(255,255,255,0.1)",
+            border: "1px solid rgba(0,0,0,0.1)",
             padding: "16px 24px",
             minWidth: "200px",
           }}>
@@ -93,7 +93,7 @@ export function Testimonials() {
               style={{
                 background: "var(--dark-2)",
                 padding: "36px",
-                border: "1px solid rgba(255,255,255,0.04)",
+                border: "1px solid rgba(0,0,0,0.08)",
                 position: "relative",
                 overflow: "hidden",
                 transition: "border-color 0.3s, transform 0.3s",
@@ -118,7 +118,7 @@ export function Testimonials() {
               </div>
               <p style={{
                 fontSize: "15px",
-                color: "rgba(255,255,255,0.7)",
+                color: "rgba(0,0,0,0.7)",
                 lineHeight: 1.7,
                 marginBottom: "24px",
                 fontStyle: "italic",
@@ -129,7 +129,7 @@ export function Testimonials() {
                 display: "flex",
                 alignItems: "center",
                 gap: "12px",
-                borderTop: "1px solid rgba(255,255,255,0.06)",
+                borderTop: "1px solid rgba(0,0,0,0.1)",
                 paddingTop: "20px",
               }}>
                 <div style={{

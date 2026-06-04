@@ -19,7 +19,7 @@ const weekendRows = [
 ];
 
 function Badge({ label }: { label: string }) {
-  if (label === "—") return <span style={{ color: "rgba(255,255,255,0.25)" }}>—</span>;
+  if (label === "—") return <span style={{ color: "rgba(0,0,0,0.3)" }}>—</span>;
   const isKids  = label.includes("Kids");
   const isNoGi  = label.includes("No-Gi");
   return (
@@ -39,7 +39,7 @@ export function Schedule() {
       ref={ref as React.RefObject<HTMLElement>}
       style={{
         padding: "120px 0",
-        background: "var(--dark)",
+        background: "var(--white)",
         position: "relative",
       }}
     >
@@ -67,7 +67,7 @@ export function Schedule() {
             </div>
             <p className="fade-right" style={{
               fontSize: "14px",
-              color: "rgba(255,255,255,0.4)",
+              color: "rgba(0,0,0,0.5)",
               maxWidth: "320px",
               textAlign: "right",
               lineHeight: 1.6,
@@ -91,7 +91,7 @@ export function Schedule() {
                 textTransform: "uppercase",
                 padding: "12px 24px",
                 background: activeTab === tab ? "var(--red)" : "var(--dark-2)",
-                color: activeTab === tab ? "var(--white)" : "rgba(255,255,255,0.4)",
+                color: activeTab === tab ? "var(--white)" : "rgba(0,0,0,0.55)",
                 transition: "all 0.3s",
                 border: "none",
                 cursor: "pointer",
@@ -128,14 +128,14 @@ export function Schedule() {
             </thead>
             <tbody>
               {weekdayRows.map((row) => (
-                <tr key={row.time} style={{ borderBottom: "1px solid rgba(255,255,255,0.04)" }}
+                <tr key={row.time} style={{ borderBottom: "1px solid rgba(0,0,0,0.08)" }}
                     className="schedule-row">
-                  <td style={{ padding: "16px 20px", fontFamily: "var(--font-head)", fontWeight: 700, fontSize: "16px", color: "var(--white)" }}>{row.time}</td>
-                  <td style={{ padding: "16px 20px", fontSize: "14px", color: "rgba(255,255,255,0.7)" }}><Badge label={row.mon} /></td>
-                  <td style={{ padding: "16px 20px", fontSize: "14px", color: "rgba(255,255,255,0.7)" }}><Badge label={row.tue} /></td>
-                  <td style={{ padding: "16px 20px", fontSize: "14px", color: "rgba(255,255,255,0.7)" }}><Badge label={row.wed} /></td>
-                  <td style={{ padding: "16px 20px", fontSize: "14px", color: "rgba(255,255,255,0.7)" }}><Badge label={row.thu} /></td>
-                  <td style={{ padding: "16px 20px", fontSize: "14px", color: "rgba(255,255,255,0.7)" }}><Badge label={row.fri} /></td>
+                  <td style={{ padding: "16px 20px", fontFamily: "var(--font-head)", fontWeight: 700, fontSize: "16px", color: "var(--black)" }}>{row.time}</td>
+                  <td style={{ padding: "16px 20px", fontSize: "14px", color: "rgba(0,0,0,0.7)" }}><Badge label={row.mon} /></td>
+                  <td style={{ padding: "16px 20px", fontSize: "14px", color: "rgba(0,0,0,0.7)" }}><Badge label={row.tue} /></td>
+                  <td style={{ padding: "16px 20px", fontSize: "14px", color: "rgba(0,0,0,0.7)" }}><Badge label={row.wed} /></td>
+                  <td style={{ padding: "16px 20px", fontSize: "14px", color: "rgba(0,0,0,0.7)" }}><Badge label={row.thu} /></td>
+                  <td style={{ padding: "16px 20px", fontSize: "14px", color: "rgba(0,0,0,0.7)" }}><Badge label={row.fri} /></td>
                 </tr>
               ))}
             </tbody>
@@ -168,11 +168,11 @@ export function Schedule() {
             </thead>
             <tbody>
               {weekendRows.map((row) => (
-                <tr key={row.time} style={{ borderBottom: "1px solid rgba(255,255,255,0.04)" }}
+                <tr key={row.time} style={{ borderBottom: "1px solid rgba(0,0,0,0.08)" }}
                     className="schedule-row">
-                  <td style={{ padding: "16px 20px", fontFamily: "var(--font-head)", fontWeight: 700, fontSize: "16px", color: "var(--white)" }}>{row.time}</td>
-                  <td style={{ padding: "16px 20px", fontSize: "14px", color: "rgba(255,255,255,0.7)" }}><Badge label={row.sat} /></td>
-                  <td style={{ padding: "16px 20px", fontSize: "14px", color: "rgba(255,255,255,0.7)" }}><Badge label={row.sun} /></td>
+                  <td style={{ padding: "16px 20px", fontFamily: "var(--font-head)", fontWeight: 700, fontSize: "16px", color: "var(--black)" }}>{row.time}</td>
+                  <td style={{ padding: "16px 20px", fontSize: "14px", color: "rgba(0,0,0,0.7)" }}><Badge label={row.sat} /></td>
+                  <td style={{ padding: "16px 20px", fontSize: "14px", color: "rgba(0,0,0,0.7)" }}><Badge label={row.sun} /></td>
                 </tr>
               ))}
             </tbody>
@@ -208,7 +208,7 @@ export function Schedule() {
       </div>
 
       <style>{`
-        .schedule-row:hover { background: rgba(255,255,255,0.03); }
+        .schedule-row:hover { background: rgba(0,0,0,0.04); }
         @media (max-width: 768px) {
           .schedule-header-flex { flex-direction: column !important; align-items: flex-start !important; }
           table { font-size: 13px; }

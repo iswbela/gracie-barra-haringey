@@ -39,7 +39,7 @@ export function FAQ() {
     <section
       id="faq"
       ref={ref as React.RefObject<HTMLElement>}
-      style={{ padding: "120px 0", background: "var(--dark)" }}
+      style={{ padding: "120px 0", background: "var(--off-white)" }}
     >
       <div className="container">
         <div style={{
@@ -56,7 +56,7 @@ export function FAQ() {
             </h2>
             <p className="fade-left delay-2" style={{
               fontSize: "15px",
-              color: "rgba(255,255,255,0.5)",
+              color: "rgba(0,0,0,0.6)",
               lineHeight: 1.7,
               marginBottom: "32px",
             }}>
@@ -74,7 +74,7 @@ export function FAQ() {
             {faqs.map((faq, i) => (
               <div
                 key={i}
-                style={{ borderBottom: "1px solid rgba(255,255,255,0.07)", overflow: "hidden" }}
+                style={{ borderBottom: "1px solid rgba(0,0,0,0.1)", overflow: "hidden" }}
               >
                 <button
                   onClick={() => setOpenIndex(openIndex === i ? null : i)}
@@ -90,7 +90,7 @@ export function FAQ() {
                     fontWeight: 700,
                     fontSize: "20px",
                     textTransform: "uppercase",
-                    color: openIndex === i ? "var(--red)" : "var(--white)",
+                    color: openIndex === i ? "var(--red)" : "var(--black)",
                     cursor: "pointer",
                     background: "none",
                     border: "none",
@@ -102,7 +102,7 @@ export function FAQ() {
                     width: "28px",
                     height: "28px",
                     minWidth: "28px",
-                    border: `1px solid ${openIndex === i ? "var(--red)" : "rgba(255,255,255,0.2)"}`,
+                    border: `1px solid ${openIndex === i ? "var(--red)" : "rgba(0,0,0,0.2)"}`,
                     display: "flex",
                     alignItems: "center",
                     justifyContent: "center",
@@ -121,7 +121,7 @@ export function FAQ() {
                 }}>
                   <p style={{
                     fontSize: "15px",
-                    color: "rgba(255,255,255,0.55)",
+                    color: "rgba(0,0,0,0.65)",
                     lineHeight: 1.7,
                     paddingBottom: "24px",
                   }}>

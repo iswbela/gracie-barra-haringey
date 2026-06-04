@@ -10,6 +10,10 @@ export const metadata: Metadata = {
     default: "Gracie Barra Haringey | Brazilian Jiu-Jitsu in North London",
     template: "%s | Gracie Barra Haringey",
   },
+  icons: {
+    icon: "/media/gb-logo.png",
+    apple: "/media/gb-logo.png",
+  },
   description:
     "Train Brazilian Jiu-Jitsu at Gracie Barra Haringey. World-class instruction for adults, kids and beginners in North London. Book your free trial class today.",
   keywords: ["Brazilian Jiu-Jitsu", "BJJ", "Haringey", "North London", "Gracie Barra", "martial arts", "self defence", "kids BJJ"],
@@ -27,7 +31,14 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en">
-      <body style={{ background: "var(--black)", color: "var(--white)" }}>
+      <head>
+        <link
+          rel="stylesheet"
+          href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
+          crossOrigin="anonymous"
+        />
+      </head>
+      <body style={{ background: "var(--white)", color: "var(--black)" }}>
         <Navbar />
         <CartDrawer />
         <ToastContainer />

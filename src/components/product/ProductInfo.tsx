@@ -25,7 +25,7 @@ function Accordion({
 }) {
   const [open, setOpen] = useState(defaultOpen);
   return (
-    <div style={{ borderTop: "1px solid rgba(255,255,255,0.08)" }}>
+    <div style={{ borderTop: "1px solid rgba(0,0,0,0.1)" }}>
       <button
         onClick={() => setOpen(!open)}
         style={{
@@ -37,7 +37,7 @@ function Accordion({
           cursor: "pointer",
           background: "none",
           border: "none",
-          color: open ? "var(--red)" : "var(--white)",
+          color: open ? "var(--red)" : "var(--black)",
           transition: "color 0.2s",
         }}
       >
@@ -69,7 +69,7 @@ function Accordion({
           paddingBottom: "24px",
           fontSize: "14px",
           lineHeight: 1.8,
-          color: "rgba(255,255,255,0.5)",
+          color: "rgba(0,0,0,0.55)",
         }}>
           {children}
         </div>
@@ -155,7 +155,7 @@ export function ProductInfo({ product }: Props) {
         fontSize: "clamp(36px, 4vw, 58px)",
         lineHeight: 0.9,
         textTransform: "uppercase",
-        color: "var(--white)",
+        color: "var(--black)",
         marginBottom: "20px",
       }}>
         {product.title}
@@ -167,7 +167,7 @@ export function ProductInfo({ product }: Props) {
           fontFamily: "var(--font-head)",
           fontSize: "32px",
           fontWeight: 400,
-          color: "var(--white)",
+          color: "var(--black)",
           letterSpacing: "0.02em",
         }}>
           {formatPrice(price)}
@@ -178,7 +178,7 @@ export function ProductInfo({ product }: Props) {
               fontFamily: "var(--font-head)",
               fontSize: "22px",
               fontWeight: 600,
-              color: "rgba(255,255,255,0.3)",
+              color: "rgba(0,0,0,0.35)",
               textDecoration: "line-through",
             }}>
               {formatPrice(parseFloat(comparePrice!))}
@@ -205,7 +205,7 @@ export function ProductInfo({ product }: Props) {
         fontWeight: 600,
         letterSpacing: "0.15em",
         textTransform: "uppercase",
-        color: isAvailble ? "#4caf50" : "rgba(255,255,255,0.3)",
+        color: isAvailble ? "#4caf50" : "rgba(0,0,0,0.35)",
         marginBottom: "20px",
       }}>
         ● {isAvailble ? "In Stock" : "Out of Stock"}
@@ -216,9 +216,9 @@ export function ProductInfo({ product }: Props) {
         <p style={{
           fontSize: "15px",
           lineHeight: 1.7,
-          color: "rgba(255,255,255,0.55)",
+          color: "rgba(0,0,0,0.65)",
           marginBottom: "28px",
-          borderTop: "1px solid rgba(255,255,255,0.06)",
+          borderTop: "1px solid rgba(0,0,0,0.1)",
           paddingTop: "24px",
         }}>
           {description.slice(0, 300)}{description.length > 300 ? "…" : ""}
@@ -242,11 +242,11 @@ export function ProductInfo({ product }: Props) {
           }}>
             Size
             {selectedSize && (
-              <span style={{ color: "var(--white)", fontSize: "13px" }}>— {selectedSize}</span>
+              <span style={{ color: "var(--black)", fontSize: "13px" }}>— {selectedSize}</span>
             )}
             <span style={{
               marginLeft: "auto",
-              color: "rgba(255,255,255,0.3)",
+              color: "rgba(0,0,0,0.35)",
               fontSize: "11px",
               textDecoration: "underline",
               textUnderlineOffset: "3px",
@@ -269,14 +269,14 @@ export function ProductInfo({ product }: Props) {
                     minWidth: "52px",
                     height: "44px",
                     padding: "0 12px",
-                    border: `1px solid ${active ? "var(--white)" : "rgba(255,255,255,0.12)"}`,
+                    border: `1px solid ${active ? "var(--black)" : "rgba(0,0,0,0.15)"}`,
                     fontFamily: "var(--font-head)",
                     fontSize: "15px",
                     fontWeight: 700,
                     letterSpacing: "0.1em",
                     textTransform: "uppercase",
-                    color: active ? "var(--black)" : avail ? "rgba(255,255,255,0.7)" : "rgba(255,255,255,0.2)",
-                    background: active ? "var(--white)" : "transparent",
+                    color: active ? "var(--white)" : avail ? "rgba(0,0,0,0.8)" : "rgba(0,0,0,0.3)",
+                    background: active ? "var(--black)" : "transparent",
                     transition: "all 0.2s",
                     cursor: avail ? "pointer" : "not-allowed",
                     textDecoration: !avail ? "line-through" : "none",
@@ -296,7 +296,7 @@ export function ProductInfo({ product }: Props) {
         <div style={{
           display: "flex",
           alignItems: "center",
-          border: "1px solid rgba(255,255,255,0.12)",
+          border: "1px solid rgba(0,0,0,0.15)",
         }}>
           <button
             onClick={() => setQuantity((q) => Math.max(1, q - 1))}
@@ -307,7 +307,7 @@ export function ProductInfo({ product }: Props) {
               alignItems: "center",
               justifyContent: "center",
               fontSize: "20px",
-              color: "rgba(255,255,255,0.5)",
+              color: "rgba(0,0,0,0.55)",
               background: "none",
               border: "none",
               cursor: "pointer",
@@ -325,9 +325,9 @@ export function ProductInfo({ product }: Props) {
             fontFamily: "var(--font-head)",
             fontSize: "20px",
             fontWeight: 700,
-            color: "var(--white)",
-            borderLeft: "1px solid rgba(255,255,255,0.08)",
-            borderRight: "1px solid rgba(255,255,255,0.08)",
+            color: "var(--black)",
+            borderLeft: "1px solid rgba(0,0,0,0.1)",
+            borderRight: "1px solid rgba(0,0,0,0.1)",
           }}>
             {quantity}
           </span>
@@ -340,7 +340,7 @@ export function ProductInfo({ product }: Props) {
               alignItems: "center",
               justifyContent: "center",
               fontSize: "20px",
-              color: "rgba(255,255,255,0.5)",
+              color: "rgba(0,0,0,0.55)",
               background: "none",
               border: "none",
               cursor: "pointer",
@@ -374,7 +374,7 @@ export function ProductInfo({ product }: Props) {
       {/* Trust badges */}
       <div style={{
         display: "flex",
-        border: "1px solid rgba(255,255,255,0.06)",
+        border: "1px solid rgba(0,0,0,0.1)",
         marginTop: "24px",
       }}>
         {[
@@ -390,7 +390,7 @@ export function ProductInfo({ product }: Props) {
             flexDirection: "column",
             alignItems: "center",
             gap: "4px",
-            borderRight: i < 3 ? "1px solid rgba(255,255,255,0.06)" : "none",
+            borderRight: i < 3 ? "1px solid rgba(0,0,0,0.1)" : "none",
             textAlign: "center",
           }}>
             <span style={{ fontSize: "20px" }}>{t.icon}</span>
@@ -400,7 +400,7 @@ export function ProductInfo({ product }: Props) {
               fontWeight: 700,
               letterSpacing: "0.15em",
               textTransform: "uppercase",
-              color: "rgba(255,255,255,0.35)",
+              color: "rgba(0,0,0,0.45)",
               lineHeight: 1.3,
               whiteSpace: "pre-line",
             }}>
@@ -437,7 +437,7 @@ export function ProductInfo({ product }: Props) {
         <Accordion title="Shipping & Returns">
           <p>Free standard shipping on orders over £50. Express delivery available. Returns accepted within 30 days of purchase in original condition. See our full returns policy for details.</p>
         </Accordion>
-        <div style={{ borderBottom: "1px solid rgba(255,255,255,0.08)" }} />
+        <div style={{ borderBottom: "1px solid rgba(0,0,0,0.1)" }} />
       </div>
     </div>
   );

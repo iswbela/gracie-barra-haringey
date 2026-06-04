@@ -58,7 +58,7 @@ export function CTASection() {
             <Link href="/#contact" className="btn btn-primary">
               <span>Book Free Trial</span>
             </Link>
-            <a href="tel:+442012345678" className="btn btn-outline">
+            <a href="tel:+442012345678" className="btn cta-call-btn">
               Call Us Now
             </a>
           </div>
@@ -82,7 +82,7 @@ export function CTASection() {
                 fontWeight: 600,
                 letterSpacing: "0.1em",
                 textTransform: "uppercase",
-                color: "rgba(255,255,255,0.4)",
+                color: "rgba(255,255,255,0.6)",
               }}>
                 <span style={{ color: "var(--red)" }}>✓</span>
                 {item}
@@ -91,6 +91,20 @@ export function CTASection() {
           </div>
         </div>
       </div>
+
+      <style>{`
+        #cta .section-title { color: var(--white); }
+        .cta-call-btn {
+          background: #002878;
+          color: #ffffff;
+          border: 1px solid rgba(255,255,255,0.25);
+        }
+        .cta-call-btn:hover {
+          background: #003aaa;
+          border-color: rgba(255,255,255,0.5);
+          color: #ffffff;
+        }
+      `}</style>
     </section>
   );
 }

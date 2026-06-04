@@ -42,7 +42,7 @@ export function Programmes() {
       ref={ref as React.RefObject<HTMLElement>}
       style={{
         padding: "120px 0",
-        background: "var(--black)",
+        background: "var(--off-white)",
         position: "relative",
         overflow: "hidden",
       }}
@@ -61,7 +61,7 @@ export function Programmes() {
           </h2>
           <p className="fade-up delay-2" style={{
             fontSize: "16px",
-            color: "rgba(255,255,255,0.5)",
+            color: "var(--black)",
             maxWidth: "560px",
             margin: "0 auto",
           }}>
@@ -121,7 +121,7 @@ export function Programmes() {
                 fontFamily: "var(--font-head)",
                 fontWeight: 900,
                 fontSize: "80px",
-                color: "rgba(255,255,255,0.04)",
+                color: "rgba(0,0,0,0.08)",
                 lineHeight: 1,
                 marginBottom: "24px",
                 transition: "color 0.4s",
@@ -165,21 +165,21 @@ export function Programmes() {
               </div>
               <p style={{
                 fontSize: "14px",
-                color: "rgba(255,255,255,0.55)",
+                color: "var(--black)",
                 lineHeight: 1.7,
                 marginBottom: "28px",
               }}>
                 {prog.body}
               </p>
               <ul style={{
-                borderTop: "1px solid rgba(255,255,255,0.06)",
+                borderTop: "1px solid rgba(0,0,0,0.1)",
                 paddingTop: "20px",
                 listStyle: "none",
               }}>
                 {prog.features.map((f) => (
                   <li key={f} style={{
                     fontSize: "13px",
-                    color: "rgba(255,255,255,0.5)",
+                    color: "var(--black)",
                     padding: "5px 0",
                     display: "flex",
                     alignItems: "center",

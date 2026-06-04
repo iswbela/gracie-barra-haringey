@@ -12,7 +12,7 @@ export function About() {
       ref={ref as React.RefObject<HTMLElement>}
       style={{
         padding: "120px 0",
-        background: "var(--dark)",
+        background: "var(--white)",
         position: "relative",
         overflow: "hidden",
       }}
@@ -27,7 +27,7 @@ export function About() {
         fontWeight: 900,
         fontSize: "320px",
         lineHeight: 1,
-        color: "rgba(255,255,255,0.015)",
+        color: "rgba(0,0,0,0.04)",
         pointerEvents: "none",
         userSelect: "none",
       }}>BJJ</div>
@@ -66,7 +66,7 @@ export function About() {
                 position: "absolute",
                 inset: 0,
                 background: `
-                  linear-gradient(to bottom, rgba(8,8,8,0.85) 0%, rgba(8,8,8,0.3) 35%, transparent 60%),
+                  linear-gradient(to bottom, rgba(0,0,0,0.85) 0%, rgba(0,0,0,0.3) 35%, transparent 60%),
                   linear-gradient(135deg, rgba(200,16,46,0.18) 0%, transparent 50%),
                   repeating-linear-gradient(-45deg, transparent, transparent 8px, rgba(200,16,46,0.04) 8px, rgba(200,16,46,0.04) 9px)
                 `,
@@ -138,7 +138,7 @@ export function About() {
             <p className="fade-up delay-1" style={{
               fontSize: "16px",
               lineHeight: 1.8,
-              color: "rgba(255,255,255,0.6)",
+              color: "rgba(0,0,0,0.65)",
               marginBottom: "20px",
             }}>
               Gracie Barra Haringey is part of the world's largest Brazilian Jiu-Jitsu organisation — founded by Master Carlos Gracie Jr. We bring that global standard of excellence to North London, creating a safe, welcoming environment where everyone from complete beginners to seasoned competitors can grow.
@@ -146,7 +146,7 @@ export function About() {
             <p className="fade-up delay-2" style={{
               fontSize: "16px",
               lineHeight: 1.8,
-              color: "rgba(255,255,255,0.6)",
+              color: "rgba(0,0,0,0.65)",
               marginBottom: "20px",
             }}>
               Our academy runs structured programmes for all ages and levels. Whether you're looking for fitness, self-defence, competition or simply a challenge — this is your place.
@@ -173,7 +173,7 @@ export function About() {
                     alignItems: "flex-start",
                     gap: "12px",
                     padding: "16px",
-                    border: "1px solid rgba(255,255,255,0.06)",
+                    border: "1px solid rgba(0,0,0,0.1)",
                     transition: "border-color 0.3s",
                   }}
                 >

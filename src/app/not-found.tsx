@@ -9,7 +9,7 @@ export default function NotFound() {
       alignItems: "center",
       justifyContent: "center",
       padding: "0 24px",
-      background: "var(--black)",
+      background: "var(--white)",
       textAlign: "center",
     }}>
       <div style={{
@@ -28,7 +28,7 @@ export default function NotFound() {
         fontWeight: 900,
         fontSize: "clamp(40px, 6vw, 72px)",
         textTransform: "uppercase",
-        color: "var(--white)",
+        color: "var(--black)",
         lineHeight: 0.95,
         marginBottom: "16px",
         marginTop: "-20px",
@@ -37,7 +37,7 @@ export default function NotFound() {
       </h1>
       <p style={{
         fontSize: "15px",
-        color: "rgba(255,255,255,0.4)",
+        color: "rgba(0,0,0,0.55)",
         marginBottom: "40px",
         maxWidth: "380px",
         lineHeight: 1.6,

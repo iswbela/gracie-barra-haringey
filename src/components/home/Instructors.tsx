@@ -45,7 +45,7 @@ export function Instructors() {
     <section
       id="instructors"
       ref={ref as React.RefObject<HTMLElement>}
-      style={{ padding: "120px 0", background: "var(--black)" }}
+      style={{ padding: "120px 0", background: "var(--off-white)" }}
     >
       <div className="container">
         <div style={{ marginBottom: "64px" }}>
@@ -143,7 +143,7 @@ export function Instructors() {
                 }}>
                   {inst.title}
                 </div>
-                <p style={{ fontSize: "13px", color: "rgba(255,255,255,0.5)", lineHeight: 1.6 }}>
+                <p style={{ fontSize: "13px", color: "rgba(0,0,0,0.6)", lineHeight: 1.6 }}>
                   {inst.bio}
                 </p>
               </div>

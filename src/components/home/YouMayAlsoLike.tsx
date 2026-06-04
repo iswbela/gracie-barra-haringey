@@ -34,9 +34,9 @@ export function YouMayAlsoLike({ products }: Props) {
       id="shop-preview"
       ref={sectionRef as React.RefObject<HTMLElement>}
       style={{
-        background: "var(--dark)",
+        background: "var(--off-white)",
         padding: "120px 0",
-        borderTop: "1px solid rgba(255,255,255,0.04)",
+        borderTop: "1px solid rgba(0,0,0,0.08)",
       }}
     >
       <div className="container">
@@ -61,11 +61,11 @@ export function YouMayAlsoLike({ products }: Props) {
             fontWeight: 700,
             letterSpacing: "0.15em",
             textTransform: "uppercase",
-            color: "rgba(255,255,255,0.4)",
+            color: "rgba(0,0,0,0.5)",
             display: "flex",
             alignItems: "center",
             gap: "8px",
-            borderBottom: "1px solid rgba(255,255,255,0.15)",
+            borderBottom: "1px solid rgba(0,0,0,0.2)",
             paddingBottom: "2px",
             transition: "color 0.2s, border-color 0.2s",
             textDecoration: "none",
@@ -140,7 +140,7 @@ export function YouMayAlsoLike({ products }: Props) {
                         letterSpacing: "0.2em",
                         textTransform: "uppercase",
                         background: "var(--grey)",
-                        color: "var(--white)",
+                        color: "var(--black)",
                         padding: "3px 8px",
                       }}>
                         Sold Out
@@ -167,7 +167,7 @@ export function YouMayAlsoLike({ products }: Props) {
                       fontWeight: 800,
                       textTransform: "uppercase",
                       lineHeight: 1.1,
-                      color: "var(--white)",
+                      color: "var(--black)",
                       marginBottom: "8px",
                     }}>
                       {product.title}
@@ -176,7 +176,7 @@ export function YouMayAlsoLike({ products }: Props) {
                       fontFamily: "var(--font-head)",
                       fontSize: "20px",
                       fontWeight: 400,
-                      color: "var(--white)",
+                      color: "var(--black)",
                     }}>
                       {formatPrice(price)}
                     </div>
@@ -196,9 +196,9 @@ export function YouMayAlsoLike({ products }: Props) {
                     letterSpacing: "0.15em",
                     textTransform: "uppercase",
                     background: "transparent",
-                    color: "rgba(255,255,255,0.4)",
+                    color: "rgba(0,0,0,0.5)",
                     border: "none",
-                    borderTop: "1px solid rgba(255,255,255,0.06)",
+                    borderTop: "1px solid rgba(0,0,0,0.1)",
                     transition: "all 0.25s",
                     marginTop: "10px",
                     cursor: avail ? "pointer" : "not-allowed",
@@ -221,15 +221,15 @@ export function YouMayAlsoLike({ products }: Props) {
       </div>
 
       <style>{`
-        .view-all-link:hover { color: var(--white) !important; border-color: var(--white) !important; }
+        .view-all-link:hover { color: var(--black) !important; border-color: var(--black) !important; }
         .preview-card-item:hover {
           transform: translateY(-4px);
-          box-shadow: 0 20px 60px rgba(0,0,0,0.5);
+          box-shadow: 0 20px 60px rgba(0,0,0,0.15);
           border-top-color: var(--red) !important;
         }
         .preview-card-item:hover .preview-img-main { opacity: 0; }
         .preview-card-item:hover .preview-img-hover { opacity: 1 !important; }
-        .preview-card-item:hover .preview-atc-btn { color: var(--white); background: rgba(200,16,46,0.08); }
+        .preview-card-item:hover .preview-atc-btn { color: var(--black); background: rgba(200,16,46,0.06); }
         .preview-atc-btn:hover { background: var(--red) !important; color: var(--white) !important; }
         @media (max-width: 1024px) {
           #shop-preview-grid-wrapper { grid-template-columns: repeat(2, 1fr) !important; }

@@ -16,7 +16,7 @@ export function Contact() {
     <section
       id="contact"
       ref={ref as React.RefObject<HTMLElement>}
-      style={{ padding: "120px 0", background: "var(--black)" }}
+      style={{ padding: "120px 0", background: "var(--white)" }}
     >
       <div className="container">
         <div style={{
@@ -44,7 +44,7 @@ export function Contact() {
                   alignItems: "flex-start",
                   gap: "16px",
                   padding: "20px 0",
-                  borderBottom: "1px solid rgba(255,255,255,0.05)",
+                  borderBottom: "1px solid rgba(0,0,0,0.1)",
                 }}>
                   <div style={{
                     width: "44px",
@@ -73,7 +73,7 @@ export function Contact() {
                     </h4>
                     <p style={{
                       fontSize: "15px",
-                      color: "rgba(255,255,255,0.7)",
+                      color: "rgba(0,0,0,0.7)",
                       lineHeight: 1.5,
                       whiteSpace: "pre-line",
                     }}>
@@ -90,7 +90,7 @@ export function Contact() {
               aspectRatio: "4/3",
               position: "relative",
               overflow: "hidden",
-              border: "1px solid rgba(255,255,255,0.06)",
+              border: "1px solid rgba(0,0,0,0.1)",
               marginTop: "32px",
             }}>
               <iframe
@@ -112,7 +112,7 @@ export function Contact() {
                 bottom: 0,
                 left: 0,
                 right: 0,
-                background: "linear-gradient(to top, rgba(8,8,8,0.9), transparent)",
+                background: "linear-gradient(to top, rgba(0,0,0,0.7), transparent)",
                 padding: "24px 20px 16px",
               }}>
                 <div style={{
@@ -152,7 +152,7 @@ export function Contact() {
                 }}>
                   OSS! You're In
                 </h3>
-                <p style={{ color: "rgba(255,255,255,0.6)", fontSize: "15px", lineHeight: 1.6 }}>
+                <p style={{ color: "rgba(0,0,0,0.65)", fontSize: "15px", lineHeight: 1.6 }}>
                   We'll be in touch within 24 hours to arrange your free trial class. Get ready to train!
                 </p>
               </div>

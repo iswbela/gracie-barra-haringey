@@ -80,6 +80,7 @@ export function Benefits() {
                 textTransform: "uppercase",
                 lineHeight: 1,
                 marginBottom: "12px",
+                color: "var(--white)",
               }}>
                 {b.title}
               </h4>
@@ -92,9 +93,10 @@ export function Benefits() {
       </div>
 
       <style>{`
-        /* Override section-label colour inside red bg */
+        /* Override section-label and section-title colour inside red bg */
         #benefits .section-label { color: rgba(255,255,255,0.6); }
         #benefits .section-label::before { background: rgba(255,255,255,0.6); }
+        #benefits .section-title { color: var(--white); }
         .benefit-item-card:hover {
           background: rgba(0,0,0,0.35) !important;
           border-color: var(--white) !important;

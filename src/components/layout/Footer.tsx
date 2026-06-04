@@ -3,8 +3,8 @@ import Link from "next/link";
 export function Footer() {
   return (
     <footer style={{
-      background: "var(--dark)",
-      borderTop: "1px solid rgba(255,255,255,0.05)",
+      background: "var(--off-white)",
+      borderTop: "1px solid rgba(0,0,0,0.08)",
       padding: "80px 0 0",
     }}>
       <div className="container">
@@ -27,25 +27,13 @@ export function Footer() {
               textTransform: "uppercase",
               marginBottom: "20px",
             }}>
-              <div style={{
-                width: "38px",
-                height: "38px",
-                background: "var(--red)",
-                display: "flex",
-                alignItems: "center",
-                justifyContent: "center",
-                fontSize: "18px",
-                fontWeight: 900,
-                clipPath: "polygon(50% 0%, 100% 25%, 100% 75%, 50% 100%, 0% 75%, 0% 25%)",
-                color: "var(--white)",
-              }}>
-                GB
-              </div>
+              {/* eslint-disable-next-line @next/next/no-img-element */}
+              <img src="/media/gb-logo.png" alt="Gracie Barra logo" style={{ width: "38px", height: "38px", objectFit: "contain", display: "block" }} />
               Gracie Barra Haringey
             </div>
             <p style={{
               fontSize: "14px",
-              color: "rgba(255,255,255,0.4)",
+              color: "rgba(0,0,0,0.5)",
               lineHeight: 1.7,
               marginBottom: "24px",
             }}>
@@ -53,10 +41,10 @@ export function Footer() {
             </p>
             <div style={{ display: "flex", gap: "10px" }}>
               {[
-                { label: "Instagram", icon: "📸" },
-                { label: "Facebook",  icon: "👍" },
-                { label: "YouTube",   icon: "▶️" },
-                { label: "WhatsApp",  icon: "💬" },
+                { label: "Instagram", faClass: "fa-brands fa-instagram" },
+                { label: "X",         faClass: "fa-brands fa-x-twitter" },
+                { label: "YouTube",   faClass: "fa-brands fa-youtube" },
+                { label: "Facebook",  faClass: "fa-brands fa-facebook-f" },
               ].map((s) => (
                 <a
                   key={s.label}
@@ -66,16 +54,18 @@ export function Footer() {
                   style={{
                     width: "38px",
                     height: "38px",
-                    background: "rgba(255,255,255,0.05)",
-                    border: "1px solid rgba(255,255,255,0.08)",
+                    background: "rgba(0,0,0,0.05)",
+                    border: "1px solid rgba(0,0,0,0.1)",
                     display: "flex",
                     alignItems: "center",
                     justifyContent: "center",
-                    fontSize: "14px",
+                    fontSize: "15px",
+                    color: "rgba(0,0,0,0.55)",
                     transition: "all 0.3s",
+                    textDecoration: "none",
                   }}
                 >
-                  {s.icon}
+                  <i className={s.faClass} />
                 </a>
               ))}
             </div>
@@ -104,7 +94,7 @@ export function Footer() {
                 <li key={item.label} style={{ marginBottom: "10px" }}>
                   <Link href={item.href} className="footer-link-item" style={{
                     fontSize: "14px",
-                    color: "rgba(255,255,255,0.45)",
+                    color: "rgba(0,0,0,0.55)",
                     transition: "color 0.3s",
                     textDecoration: "none",
                   }}>
@@ -138,7 +128,7 @@ export function Footer() {
                 <li key={item.label} style={{ marginBottom: "10px" }}>
                   <Link href={item.href} className="footer-link-item" style={{
                     fontSize: "14px",
-                    color: "rgba(255,255,255,0.45)",
+                    color: "rgba(0,0,0,0.55)",
                     transition: "color 0.3s",
                     textDecoration: "none",
                   }}>
@@ -173,7 +163,7 @@ export function Footer() {
                   {item.external ? (
                     <a href={item.href} className="footer-link-item" style={{
                       fontSize: "14px",
-                      color: "rgba(255,255,255,0.45)",
+                      color: "rgba(0,0,0,0.55)",
                       transition: "color 0.3s",
                       textDecoration: "none",
                     }}>
@@ -182,7 +172,7 @@ export function Footer() {
                   ) : (
                     <Link href={item.href} className="footer-link-item" style={{
                       fontSize: "14px",
-                      color: "rgba(255,255,255,0.45)",
+                      color: "rgba(0,0,0,0.55)",
                       transition: "color 0.3s",
                       textDecoration: "none",
                     }}>
@@ -197,7 +187,7 @@ export function Footer() {
 
         {/* Bottom bar */}
         <div style={{
-          borderTop: "1px solid rgba(255,255,255,0.05)",
+          borderTop: "1px solid rgba(0,0,0,0.08)",
           padding: "24px 0",
           display: "flex",
           alignItems: "center",
@@ -205,7 +195,7 @@ export function Footer() {
           gap: "16px",
           flexWrap: "wrap",
         }}>
-          <p style={{ fontSize: "13px", color: "rgba(255,255,255,0.25)" }}>
+          <p style={{ fontSize: "13px", color: "rgba(0,0,0,0.45)" }}>
             © 2024 Gracie Barra Haringey. All rights reserved. |{" "}
             <a href="#" style={{ color: "var(--red)" }}>Privacy Policy</a>
           </p>
@@ -218,29 +208,17 @@ export function Footer() {
             fontWeight: 700,
             letterSpacing: "0.15em",
             textTransform: "uppercase",
-            color: "rgba(255,255,255,0.25)",
+            color: "rgba(0,0,0,0.45)",
           }}>
-            <div style={{
-              width: "28px",
-              height: "28px",
-              background: "var(--red)",
-              display: "flex",
-              alignItems: "center",
-              justifyContent: "center",
-              fontSize: "12px",
-              fontWeight: 900,
-              clipPath: "polygon(50% 0%, 100% 25%, 100% 75%, 50% 100%, 0% 75%, 0% 25%)",
-              color: "var(--white)",
-            }}>
-              GB
-            </div>
+            {/* eslint-disable-next-line @next/next/no-img-element */}
+            <img src="/media/gb-logo.png" alt="Gracie Barra logo" style={{ width: "28px", height: "28px", objectFit: "contain", display: "block" }} />
             Official Gracie Barra Affiliate
           </div>
         </div>
       </div>
 
       <style>{`
-        .footer-link-item:hover { color: var(--white) !important; }
+        .footer-link-item:hover { color: var(--black) !important; }
         .social-link-item:hover { background: var(--red) !important; border-color: var(--red) !important; }
         @media (max-width: 1024px) {
           .footer-grid-responsive { grid-template-columns: 1fr 1fr !important; }

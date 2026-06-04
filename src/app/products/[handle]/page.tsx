@@ -96,16 +96,16 @@ function RelatedCard({ product }: { product: CatalogProduct }) {
         <div style={{ fontFamily: "var(--font-head)", fontSize: "10px", fontWeight: 700, letterSpacing: "0.2em", textTransform: "uppercase", color: "var(--red)", marginBottom: "4px" }}>
           {product.product_type}
         </div>
-        <div style={{ fontFamily: "var(--font-head)", fontSize: "16px", fontWeight: 800, textTransform: "uppercase", lineHeight: 1.1, color: "var(--white)", marginBottom: "6px" }}>
+        <div style={{ fontFamily: "var(--font-head)", fontSize: "16px", fontWeight: 800, textTransform: "uppercase", lineHeight: 1.1, color: "var(--black)", marginBottom: "6px" }}>
           {product.title}
         </div>
-        <div style={{ fontFamily: "var(--font-head)", fontSize: "18px", fontWeight: 400, color: "var(--white)" }}>
+        <div style={{ fontFamily: "var(--font-head)", fontSize: "18px", fontWeight: 400, color: "var(--black)" }}>
           {formatPrice(price)}
         </div>
       </div>
 
       <style>{`
-        .related-card-item:hover { transform: translateY(-4px); box-shadow: 0 20px 60px rgba(0,0,0,0.5); border-top-color: var(--red) !important; }
+        .related-card-item:hover { transform: translateY(-4px); box-shadow: 0 20px 60px rgba(0,0,0,0.12); border-top-color: var(--red) !important; }
         .related-card-item:hover .rel-img-main { opacity: 0; }
         .related-card-item:hover .rel-img-hover { opacity: 1 !important; }
       `}</style>
@@ -129,11 +129,11 @@ function ProductPageLayout({
   return (
     <div>
       {/* Breadcrumb */}
-      <div style={{ padding: "100px 0 0", background: "var(--dark)" }}>
+      <div style={{ padding: "100px 0 0", background: "var(--white)" }}>
         <div className="container">
           <div style={{
             padding: "20px 0",
-            borderBottom: "1px solid rgba(255,255,255,0.06)",
+            borderBottom: "1px solid rgba(0,0,0,0.1)",
             display: "flex",
             alignItems: "center",
             gap: "8px",
@@ -142,19 +142,19 @@ function ProductPageLayout({
             fontWeight: 600,
             letterSpacing: "0.15em",
             textTransform: "uppercase",
-            color: "rgba(255,255,255,0.35)",
+            color: "rgba(0,0,0,0.45)",
           }}>
             <Link href="/" className="breadcrumb-link" style={{ textDecoration: "none", color: "inherit", transition: "color 0.2s" }}>Home</Link>
-            <span style={{ color: "rgba(255,255,255,0.15)" }}>/</span>
+            <span style={{ color: "rgba(0,0,0,0.2)" }}>/</span>
             <Link href="/products" className="breadcrumb-link" style={{ textDecoration: "none", color: "inherit", transition: "color 0.2s" }}>Shop</Link>
-            <span style={{ color: "rgba(255,255,255,0.15)" }}>/</span>
-            <span style={{ color: "rgba(255,255,255,0.6)" }}>{product.title}</span>
+            <span style={{ color: "rgba(0,0,0,0.2)" }}>/</span>
+            <span style={{ color: "rgba(0,0,0,0.7)" }}>{product.title}</span>
           </div>
         </div>
       </div>
 
       {/* Product main */}
-      <div style={{ background: "var(--dark)", paddingBottom: "80px" }}>
+      <div style={{ background: "var(--white)", paddingBottom: "80px" }}>
         <div className="container">
           <div style={{
             display: "grid",
@@ -178,7 +178,7 @@ function ProductPageLayout({
 
       {/* Related products */}
       {relatedCatalog.length > 0 && (
-        <section style={{ background: "var(--black)", padding: "100px 0" }}>
+        <section style={{ background: "var(--off-white)", padding: "100px 0" }}>
           <div className="container">
             <span className="section-label">You Might Love</span>
             <h2 className="section-title" style={{ fontSize: "clamp(40px, 5vw, 72px)", marginBottom: "40px" }}>

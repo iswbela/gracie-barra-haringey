@@ -48,13 +48,10 @@ export function Navbar() {
           left: 0,
           right: 0,
           zIndex: 1000,
-          transition: "background 0.4s var(--ease), backdrop-filter 0.4s, box-shadow 0.4s",
-          ...(scrolled ? {
-            background: "rgba(8,8,8,0.96)",
-            backdropFilter: "blur(20px)",
-            WebkitBackdropFilter: "blur(20px)",
-            boxShadow: "0 1px 0 rgba(255,255,255,0.06)",
-          } : {}),
+          background: "rgba(255,255,255,1)",
+          borderBottom: "1px solid rgba(0,0,0,0.08)",
+          boxShadow: scrolled ? "0 2px 16px rgba(0,0,0,0.08)" : "none",
+          transition: "box-shadow 0.4s var(--ease)",
         }}
       >
         <div style={{
@@ -77,23 +74,14 @@ export function Navbar() {
             letterSpacing: "0.08em",
             textTransform: "uppercase",
             textDecoration: "none",
-            color: "var(--white)",
+            color: "var(--black)",
           }}>
-            <div style={{
-              width: "42px",
-              height: "42px",
-              background: "var(--red)",
-              display: "flex",
-              alignItems: "center",
-              justifyContent: "center",
-              fontSize: "22px",
-              fontWeight: 900,
-              letterSpacing: "-1px",
-              clipPath: "polygon(50% 0%, 100% 25%, 100% 75%, 50% 100%, 0% 75%, 0% 25%)",
-              color: "var(--white)",
-            }}>
-              GB
-            </div>
+            {/* eslint-disable-next-line @next/next/no-img-element */}
+            <img
+              src="/media/gb-logo.png"
+              alt="Gracie Barra logo"
+              style={{ width: "42px", height: "42px", objectFit: "contain", display: "block" }}
+            />
             <div style={{ lineHeight: 1.1 }}>
               Gracie Barra
               <span style={{
@@ -125,7 +113,7 @@ export function Navbar() {
                     fontWeight: 600,
                     letterSpacing: "0.15em",
                     textTransform: "uppercase",
-                    color: "rgba(255,255,255,0.8)",
+                    color: "rgba(0,0,0,0.75)",
                     position: "relative",
                     textDecoration: "none",
                   }}
@@ -153,9 +141,9 @@ export function Navbar() {
                 fontWeight: 700,
                 letterSpacing: "0.15em",
                 textTransform: "uppercase",
-                color: "var(--white)",
+                color: "var(--black)",
                 padding: "8px 16px",
-                border: "1px solid rgba(255,255,255,0.15)",
+                border: "1px solid rgba(0,0,0,0.15)",
                 transition: "all 0.3s",
                 cursor: "pointer",
                 background: "none",
@@ -220,7 +208,7 @@ export function Navbar() {
               <span style={{
                 display: "block",
                 height: "2px",
-                background: "var(--white)",
+                background: "var(--black)",
                 transition: "all 0.3s var(--ease)",
                 transformOrigin: "center",
                 transform: mobileOpen ? "rotate(45deg) translate(5px, 5px)" : "none",
@@ -228,14 +216,14 @@ export function Navbar() {
               <span style={{
                 display: "block",
                 height: "2px",
-                background: "var(--white)",
+                background: "var(--black)",
                 transition: "all 0.3s var(--ease)",
                 opacity: mobileOpen ? 0 : 1,
               }} />
               <span style={{
                 display: "block",
                 height: "2px",
-                background: "var(--white)",
+                background: "var(--black)",
                 transition: "all 0.3s var(--ease)",
                 transformOrigin: "center",
                 transform: mobileOpen ? "rotate(-45deg) translate(5px, -5px)" : "none",
@@ -253,7 +241,7 @@ export function Navbar() {
           left: 0,
           right: 0,
           bottom: 0,
-          background: "rgba(8,8,8,0.98)",
+          background: "rgba(255,255,255,0.98)",
           backdropFilter: "blur(20px)",
           WebkitBackdropFilter: "blur(20px)",
           display: "flex",
@@ -274,7 +262,7 @@ export function Navbar() {
                 fontWeight: 800,
                 letterSpacing: "0.08em",
                 textTransform: "uppercase",
-                color: "rgba(255,255,255,0.7)",
+                color: "rgba(0,0,0,0.75)",
                 textDecoration: "none",
               }}
             >
@@ -294,7 +282,7 @@ export function Navbar() {
       {/* Inline styles for hover effects & responsive */}
       <style>{`
         .nav-link-item::after {
-          content: "";
+          content: '';
           position: absolute;
           bottom: -4px;
           left: 0;
@@ -305,7 +293,7 @@ export function Navbar() {
           transform-origin: left;
           transition: transform 0.3s var(--ease);
         }
-        .nav-link-item:hover { color: var(--white) !important; }
+        .nav-link-item:hover { color: var(--black) !important; }
         .nav-link-item:hover::after { transform: scaleX(1); }
         .nav-cta-btn:hover { background: var(--red-light) !important; }
         .nav-cart-btn-el:hover { border-color: var(--red) !important; color: var(--red) !important; }

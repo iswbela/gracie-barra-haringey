@@ -37,11 +37,11 @@ export function CartDrawer() {
         zIndex: 80,
         width: "100%",
         maxWidth: "440px",
-        background: "var(--dark)",
-        borderLeft: "1px solid rgba(255,255,255,0.06)",
+        background: "var(--white)",
+        borderLeft: "1px solid rgba(0,0,0,0.1)",
         display: "flex",
         flexDirection: "column",
-        boxShadow: "-20px 0 60px rgba(0,0,0,0.5)",
+        boxShadow: "-20px 0 60px rgba(0,0,0,0.15)",
       }}>
         {/* Header */}
         <div style={{
@@ -49,7 +49,7 @@ export function CartDrawer() {
           alignItems: "center",
           justifyContent: "space-between",
           padding: "24px 28px",
-          borderBottom: "1px solid rgba(255,255,255,0.06)",
+          borderBottom: "1px solid rgba(0,0,0,0.08)",
         }}>
           <div style={{ display: "flex", alignItems: "center", gap: "12px" }}>
             <span style={{ fontSize: "20px" }}>🛍</span>
@@ -59,7 +59,7 @@ export function CartDrawer() {
               fontSize: "20px",
               textTransform: "uppercase",
               letterSpacing: "0.08em",
-              color: "var(--white)",
+              color: "var(--black)",
             }}>
               Cart
             </h2>
@@ -67,7 +67,7 @@ export function CartDrawer() {
               <span style={{
                 fontFamily: "var(--font-head)",
                 fontSize: "13px",
-                color: "rgba(255,255,255,0.4)",
+                color: "rgba(0,0,0,0.5)",
                 fontWeight: 600,
               }}>
                 ({items.reduce((s, i) => s + i.quantity, 0)} items)
@@ -84,9 +84,9 @@ export function CartDrawer() {
               alignItems: "center",
               justifyContent: "center",
               fontSize: "20px",
-              color: "rgba(255,255,255,0.5)",
+              color: "rgba(0,0,0,0.55)",
               background: "none",
-              border: "1px solid rgba(255,255,255,0.1)",
+              border: "1px solid rgba(0,0,0,0.12)",
               cursor: "pointer",
               transition: "all 0.2s",
             }}
@@ -106,7 +106,7 @@ export function CartDrawer() {
               justifyContent: "center",
               height: "100%",
               gap: "16px",
-              color: "rgba(255,255,255,0.3)",
+              color: "rgba(0,0,0,0.4)",
               textAlign: "center",
             }}>
               <div style={{ fontSize: "48px" }}>🛍</div>
@@ -118,7 +118,7 @@ export function CartDrawer() {
               }}>
                 Your cart is empty
               </p>
-              <p style={{ fontSize: "14px", color: "rgba(255,255,255,0.25)" }}>
+              <p style={{ fontSize: "14px", color: "rgba(0,0,0,0.4)" }}>
                 Discover our latest collection and add items to your cart.
               </p>
               <Link
@@ -138,7 +138,7 @@ export function CartDrawer() {
                   gap: "16px",
                   padding: "16px",
                   background: "var(--dark-2)",
-                  border: "1px solid rgba(255,255,255,0.04)",
+                  border: "1px solid rgba(0,0,0,0.08)",
                 }}>
                   {/* Image */}
                   <div style={{
@@ -168,7 +168,7 @@ export function CartDrawer() {
                         fontWeight: 700,
                         fontSize: "15px",
                         textTransform: "uppercase",
-                        color: "var(--white)",
+                        color: "var(--black)",
                         textDecoration: "none",
                         letterSpacing: "0.05em",
                         display: "block",
@@ -179,7 +179,7 @@ export function CartDrawer() {
                     >
                       {item.title}
                     </Link>
-                    <div style={{ fontSize: "12px", color: "rgba(255,255,255,0.4)", marginTop: "4px" }}>
+                    <div style={{ fontSize: "12px", color: "rgba(0,0,0,0.5)", marginTop: "4px" }}>
                       {item.variantTitle}
                     </div>
                     <div style={{
@@ -202,9 +202,9 @@ export function CartDrawer() {
                           display: "flex",
                           alignItems: "center",
                           justifyContent: "center",
-                          border: "1px solid rgba(255,255,255,0.12)",
+                          border: "1px solid rgba(0,0,0,0.15)",
                           background: "none",
-                          color: "rgba(255,255,255,0.5)",
+                          color: "rgba(0,0,0,0.55)",
                           fontSize: "16px",
                           cursor: "pointer",
                           transition: "all 0.2s",
@@ -216,7 +216,7 @@ export function CartDrawer() {
                         fontFamily: "var(--font-head)",
                         fontSize: "16px",
                         fontWeight: 700,
-                        color: "var(--white)",
+                        color: "var(--black)",
                         minWidth: "24px",
                         textAlign: "center",
                       }}>
@@ -230,9 +230,9 @@ export function CartDrawer() {
                           display: "flex",
                           alignItems: "center",
                           justifyContent: "center",
-                          border: "1px solid rgba(255,255,255,0.12)",
+                          border: "1px solid rgba(0,0,0,0.15)",
                           background: "none",
-                          color: "rgba(255,255,255,0.5)",
+                          color: "rgba(0,0,0,0.55)",
                           fontSize: "16px",
                           cursor: "pointer",
                           transition: "all 0.2s",
@@ -245,7 +245,7 @@ export function CartDrawer() {
                         aria-label="Remove item"
                         style={{
                           marginLeft: "auto",
-                          color: "rgba(255,255,255,0.25)",
+                          color: "rgba(0,0,0,0.4)",
                           fontSize: "18px",
                           background: "none",
                           border: "none",
@@ -269,7 +269,7 @@ export function CartDrawer() {
         {items.length > 0 && (
           <div style={{
             padding: "24px 28px",
-            borderTop: "1px solid rgba(255,255,255,0.06)",
+            borderTop: "1px solid rgba(0,0,0,0.08)",
           }}>
             <div style={{
               display: "flex",
@@ -277,19 +277,19 @@ export function CartDrawer() {
               justifyContent: "space-between",
               marginBottom: "8px",
             }}>
-              <span style={{ color: "rgba(255,255,255,0.5)", fontFamily: "var(--font-head)", fontSize: "14px", fontWeight: 600, textTransform: "uppercase", letterSpacing: "0.1em" }}>
+              <span style={{ color: "rgba(0,0,0,0.55)", fontFamily: "var(--font-head)", fontSize: "14px", fontWeight: 600, textTransform: "uppercase", letterSpacing: "0.1em" }}>
                 Subtotal
               </span>
               <span style={{
                 fontFamily: "var(--font-head)",
                 fontSize: "24px",
                 fontWeight: 900,
-                color: "var(--white)",
+                color: "var(--black)",
               }}>
                 {formatPrice(totalPrice())}
               </span>
             </div>
-            <p style={{ fontSize: "12px", color: "rgba(255,255,255,0.25)", marginBottom: "16px" }}>
+            <p style={{ fontSize: "12px", color: "rgba(0,0,0,0.4)", marginBottom: "16px" }}>
               Shipping and taxes calculated at checkout.
             </p>
             <button className="btn btn-primary" style={{ width: "100%", justifyContent: "center", padding: "18px" }}>
@@ -305,7 +305,7 @@ export function CartDrawer() {
                 fontFamily: "var(--font-head)",
                 letterSpacing: "0.15em",
                 textTransform: "uppercase",
-                color: "rgba(255,255,255,0.2)",
+                color: "rgba(0,0,0,0.35)",
                 background: "none",
                 border: "none",
                 cursor: "pointer",
@@ -320,7 +320,7 @@ export function CartDrawer() {
       </aside>
 
       <style>{`
-        .cart-close-btn:hover { color: var(--white) !important; border-color: var(--red) !important; }
+        .cart-close-btn:hover { color: var(--red) !important; border-color: var(--red) !important; }
         .remove-item-btn:hover { color: var(--red) !important; }
         .clear-cart-btn:hover { color: var(--red) !important; }
       `}</style>

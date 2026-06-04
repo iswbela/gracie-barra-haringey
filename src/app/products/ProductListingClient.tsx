@@ -123,7 +123,7 @@ function ProductCard({ product }: { product: CatalogProduct }) {
             fontWeight: 800,
             textTransform: "uppercase",
             lineHeight: 1.1,
-            color: "var(--white)",
+            color: "var(--black)",
             marginBottom: "8px",
           }}>
             {product.title}
@@ -132,7 +132,7 @@ function ProductCard({ product }: { product: CatalogProduct }) {
             fontFamily: "var(--font-head)",
             fontSize: "20px",
             fontWeight: 400,
-            color: "var(--white)",
+            color: "var(--black)",
           }}>
             {formatPrice(price)}
           </div>
@@ -152,9 +152,9 @@ function ProductCard({ product }: { product: CatalogProduct }) {
           letterSpacing: "0.15em",
           textTransform: "uppercase",
           background: "transparent",
-          color: "rgba(255,255,255,0.4)",
+          color: "rgba(0,0,0,0.5)",
           border: "none",
-          borderTop: "1px solid rgba(255,255,255,0.06)",
+          borderTop: "1px solid rgba(0,0,0,0.1)",
           transition: "all 0.25s",
           marginTop: "10px",
           cursor: avail ? "pointer" : "not-allowed",
@@ -165,10 +165,10 @@ function ProductCard({ product }: { product: CatalogProduct }) {
       </button>
 
       <style>{`
-        .shop-product-card:hover { transform: translateY(-4px); box-shadow: 0 20px 60px rgba(0,0,0,0.5); border-top-color: var(--red) !important; }
+        .shop-product-card:hover { transform: translateY(-4px); box-shadow: 0 20px 60px rgba(0,0,0,0.12); border-top-color: var(--red) !important; }
         .shop-product-card:hover .shop-card-img-main { opacity: 0; }
         .shop-product-card:hover .shop-card-img-hover { opacity: 1 !important; }
-        .shop-product-card:hover .shop-card-atc { color: var(--white); background: rgba(200,16,46,0.08); }
+        .shop-product-card:hover .shop-card-atc { color: var(--black); background: rgba(200,16,46,0.06); }
         .shop-card-atc:hover { background: var(--red) !important; color: var(--white) !important; }
       `}</style>
     </div>
@@ -227,7 +227,7 @@ export function ProductListingClient({
       <section style={{
         position: "relative",
         padding: "160px 0 80px",
-        background: "var(--dark)",
+        background: "var(--off-white)",
         overflow: "hidden",
       }}>
         {/* Animated grid bg */}
@@ -248,7 +248,7 @@ export function ProductListingClient({
           fontWeight: 900,
           fontSize: "240px",
           lineHeight: 1,
-          color: "rgba(255,255,255,0.015)",
+          color: "rgba(0,0,0,0.04)",
           pointerEvents: "none",
           userSelect: "none",
         }}>
@@ -267,7 +267,7 @@ export function ProductListingClient({
               <h1 className="section-title" style={{ fontSize: "clamp(64px, 8vw, 110px)" }}>
                 Shop All
               </h1>
-              <p style={{ fontSize: "16px", color: "rgba(255,255,255,0.5)", marginTop: "12px", maxWidth: "400px" }}>
+              <p style={{ fontSize: "16px", color: "rgba(0,0,0,0.55)", marginTop: "12px", maxWidth: "400px" }}>
                 Premium sportswear and lifestyle clothing from Gracie Barra Haringey.
               </p>
             </div>
@@ -278,8 +278,8 @@ export function ProductListingClient({
       {/* Search bar */}
       <div style={{
         padding: "32px 0",
-        background: "var(--dark-2)",
-        borderBottom: "1px solid rgba(255,255,255,0.05)",
+        background: "var(--white)",
+        borderBottom: "1px solid rgba(0,0,0,0.08)",
       }}>
         <div className="container">
           <div style={{ display: "flex", alignItems: "center", gap: 0 }}>
@@ -290,7 +290,7 @@ export function ProductListingClient({
                 top: "50%",
                 transform: "translateY(-50%)",
                 fontSize: "20px",
-                color: "rgba(255,255,255,0.3)",
+                color: "rgba(0,0,0,0.35)",
                 pointerEvents: "none",
               }}>
                 ⌕
@@ -302,10 +302,10 @@ export function ProductListingClient({
                 onChange={(e) => handleFiltersChange({ ...filters, search: e.target.value })}
                 style={{
                   width: "100%",
-                  background: "var(--dark-3)",
-                  border: "1px solid rgba(255,255,255,0.08)",
+                  background: "var(--off-white)",
+                  border: "1px solid rgba(0,0,0,0.15)",
                   borderRight: "none",
-                  color: "var(--white)",
+                  color: "var(--black)",
                   fontFamily: "var(--font-body)",
                   fontSize: "15px",
                   padding: "16px 18px 16px 52px",
@@ -343,7 +343,7 @@ export function ProductListingClient({
             fontWeight: 600,
             letterSpacing: "0.1em",
             textTransform: "uppercase",
-            color: "rgba(255,255,255,0.4)",
+            color: "rgba(0,0,0,0.5)",
           }}>
             {filtered.length} products found{filters.search ? ` for "${filters.search}"` : ""}
           </div>
@@ -351,7 +351,7 @@ export function ProductListingClient({
       </div>
 
       {/* Main shop area */}
-      <div style={{ padding: "0 0 120px", background: "var(--black)" }}>
+      <div style={{ padding: "0 0 120px", background: "var(--white)" }}>
         <div className="container">
           <div style={{
             display: "grid",
@@ -373,7 +373,7 @@ export function ProductListingClient({
                     color: "var(--red)",
                     marginBottom: "14px",
                     paddingBottom: "10px",
-                    borderBottom: "1px solid rgba(255,255,255,0.06)",
+                    borderBottom: "1px solid rgba(0,0,0,0.1)",
                   }}>
                     Product Type
                   </div>
@@ -390,14 +390,14 @@ export function ProductListingClient({
                             gap: "10px",
                             padding: "6px 0",
                             cursor: "pointer",
-                            color: checked ? "var(--red)" : "rgba(255,255,255,0.7)",
+                            color: checked ? "var(--red)" : "rgba(0,0,0,0.7)",
                             transition: "color 0.2s",
                           }}
                         >
                           <div style={{
                             width: "16px",
                             height: "16px",
-                            border: `1px solid ${checked ? "var(--red)" : "rgba(255,255,255,0.2)"}`,
+                            border: `1px solid ${checked ? "var(--red)" : "rgba(0,0,0,0.2)"}`,
                             background: checked ? "var(--red)" : "transparent",
                             display: "flex",
                             alignItems: "center",
@@ -436,7 +436,7 @@ export function ProductListingClient({
                       color: "var(--red)",
                       marginBottom: "14px",
                       paddingBottom: "10px",
-                      borderBottom: "1px solid rgba(255,255,255,0.06)",
+                      borderBottom: "1px solid rgba(0,0,0,0.1)",
                     }}>
                       Tags
                     </div>
@@ -454,9 +454,9 @@ export function ProductListingClient({
                               letterSpacing: "0.12em",
                               textTransform: "uppercase",
                               padding: "5px 12px",
-                              border: `1px solid ${active ? "var(--red)" : "rgba(255,255,255,0.12)"}`,
+                              border: `1px solid ${active ? "var(--red)" : "rgba(0,0,0,0.15)"}`,
                               background: active ? "var(--red)" : "transparent",
-                              color: active ? "var(--white)" : "rgba(255,255,255,0.5)",
+                              color: active ? "var(--white)" : "rgba(0,0,0,0.6)",
                               cursor: "pointer",
                               transition: "all 0.2s",
                             }}
@@ -479,7 +479,7 @@ export function ProductListingClient({
                       fontWeight: 700,
                       letterSpacing: "0.15em",
                       textTransform: "uppercase",
-                      color: "rgba(255,255,255,0.25)",
+                      color: "rgba(0,0,0,0.4)",
                       cursor: "pointer",
                       background: "none",
                       border: "none",
@@ -510,7 +510,7 @@ export function ProductListingClient({
                   fontWeight: 600,
                   letterSpacing: "0.1em",
                   textTransform: "uppercase",
-                  color: "rgba(255,255,255,0.4)",
+                  color: "rgba(0,0,0,0.5)",
                 }}>
                   Showing {Math.min(paginated.length, filtered.length)} of {filtered.length}
                 </p>
@@ -527,7 +527,7 @@ export function ProductListingClient({
                         textTransform: "uppercase",
                         padding: "8px 16px",
                         background: filters.sort === opt.value ? "var(--red)" : "var(--dark-2)",
-                        color: filters.sort === opt.value ? "var(--white)" : "rgba(255,255,255,0.4)",
+                        color: filters.sort === opt.value ? "var(--white)" : "rgba(0,0,0,0.6)",
                         border: "none",
                         cursor: "pointer",
                         transition: "all 0.25s",
@@ -544,13 +544,13 @@ export function ProductListingClient({
                 <div style={{
                   padding: "80px 0",
                   textAlign: "center",
-                  color: "rgba(255,255,255,0.3)",
+                  color: "rgba(0,0,0,0.4)",
                 }}>
                   <div style={{ fontSize: "48px", marginBottom: "16px" }}>🔍</div>
                   <p style={{ fontFamily: "var(--font-head)", fontSize: "24px", fontWeight: 800, textTransform: "uppercase" }}>
                     No products found
                   </p>
-                  <p style={{ marginTop: "8px", color: "rgba(255,255,255,0.25)" }}>
+                  <p style={{ marginTop: "8px", color: "rgba(0,0,0,0.45)" }}>
                     Try adjusting your search or filters.
                   </p>
                   <button

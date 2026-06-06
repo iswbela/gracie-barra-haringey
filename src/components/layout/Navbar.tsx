@@ -30,12 +30,14 @@ export function Navbar() {
   const closeMobile = () => {
     setMobileOpen(false);
     document.body.style.overflow = "";
+    document.documentElement.style.overflow = "";
   };
 
   const toggleMobile = () => {
     const next = !mobileOpen;
     setMobileOpen(next);
     document.body.style.overflow = next ? "hidden" : "";
+    document.documentElement.style.overflow = next ? "hidden" : "";
   };
 
   return (
@@ -237,7 +239,7 @@ export function Navbar() {
       {mobileOpen && (
         <div style={{
           position: "fixed",
-          top: "72px",
+          top: "60px",
           left: 0,
           right: 0,
           bottom: 0,
@@ -248,8 +250,9 @@ export function Navbar() {
           flexDirection: "column",
           alignItems: "center",
           justifyContent: "center",
-          gap: "36px",
+          gap: "20px",
           zIndex: 999,
+          overflowY: "auto",
         }}>
           {navLinks.map((link) => (
             <Link
@@ -258,9 +261,9 @@ export function Navbar() {
               onClick={closeMobile}
               style={{
                 fontFamily: "var(--font-head)",
-                fontSize: "36px",
-                fontWeight: 800,
-                letterSpacing: "0.08em",
+                fontSize: "22px",
+                fontWeight: 700,
+                letterSpacing: "0.12em",
                 textTransform: "uppercase",
                 color: "rgba(0,0,0,0.75)",
                 textDecoration: "none",
@@ -273,6 +276,7 @@ export function Navbar() {
             href="/#cta"
             onClick={closeMobile}
             className="btn btn-primary"
+            style={{ marginTop: "8px" }}
           >
             <span>Book Free Trial</span>
           </Link>

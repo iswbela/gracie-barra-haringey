@@ -158,7 +158,7 @@ export function Contact() {
               </div>
             ) : (
               <form onSubmit={handleSubmit}>
-                <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: "16px", marginBottom: "16px" }}>
+                <div className="contact-form-name-row" style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: "16px", marginBottom: "16px" }}>
                   <div><input type="text" placeholder="First Name" required /></div>
                   <div><input type="text" placeholder="Last Name"  required /></div>
                 </div>

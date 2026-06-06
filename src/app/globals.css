@@ -1,4 +1,4 @@
-@import url("https://fonts.googleapis.com/css2?family=Barlow+Condensed:ital,wght@0,300;0,400;0,600;0,700;0,800;0,900;1,700&family=Inter:wght@300;400;500;600&family=Barlow:wght@400;500;600&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Barlow+Condensed:ital,wght@0,300;0,400;0,600;0,700;0,800;0,900;1,700&family=Inter:wght@300;400;500;600&family=Barlow:wght@400;500;600&family=Space+Grotesk:wght@300;400;500;600;700&display=swap");
 
 @tailwind base;
 @tailwind components;
@@ -22,6 +22,7 @@
   --font-head:  'Barlow Condensed', sans-serif;
   --font-body:  'Inter', sans-serif;
   --font-alt:   'Barlow', sans-serif;
+  --font-modern: 'Space Grotesk', sans-serif;
   --ease:       cubic-bezier(0.4, 0, 0.2, 1);
   --ease-out:   cubic-bezier(0, 0, 0.2, 1);
 }
@@ -240,5 +241,74 @@ textarea { resize: vertical; min-height: 100px; }
    MOBILE HELPERS
 ═══════════════════════════════════════════ */
 @media (max-width: 768px) {
+  /* Container */
   .container { padding: 0 16px; }
+
+  /* Section vertical padding — targets all home sections by ID */
+  #about, #benefits, #programmes, #schedule, #instructors,
+  #testimonials, #faq, #contact, #shop-preview {
+    padding-top: 64px !important;
+    padding-bottom: 64px !important;
+  }
+  #cta {
+    padding-top: 80px !important;
+    padding-bottom: 80px !important;
+  }
+
+  /* Section titles line-height on small screens */
+  .section-title { line-height: 1 !important; }
+
+  /* Navbar */
+  #nav > div { padding: 0 16px !important; height: 60px !important; }
+
+  /* Hero */
+  #hero { min-height: 100svh; }
+  .hero-cta-btn { width: 100% !important; justify-content: center !important; }
+
+  /* About */
+  .about-grid-responsive { grid-template-columns: 1fr !important; gap: 80px !important; }
+
+  /* Benefits */
+  .benefits-grid-responsive { grid-template-columns: 1fr 1fr !important; }
+
+  /* Programmes */
+  .programmes-grid-responsive { grid-template-columns: 1fr !important; }
+
+  /* Instructors */
+  .instructors-grid-responsive { grid-template-columns: 1fr !important; }
+
+  /* Testimonials */
+  .testimonials-grid-responsive { grid-template-columns: 1fr !important; }
+  .testimonials-header-flex { flex-direction: column !important; align-items: flex-start !important; }
+
+  /* FAQ */
+  .faq-grid-responsive { grid-template-columns: 1fr !important; }
+  .faq-grid-responsive > div:first-child { position: static !important; }
+
+  /* Schedule */
+  .schedule-header-flex { flex-direction: column !important; align-items: flex-start !important; }
+  .schedule-header-flex p { text-align: left !important; max-width: 100% !important; }
+  .schedule-table-scroll { overflow-x: auto; -webkit-overflow-scrolling: touch; }
+  .schedule-table-scroll table { min-width: 480px; }
+
+  /* Contact */
+  .contact-grid-responsive { grid-template-columns: 1fr !important; }
+  .contact-form-name-row { grid-template-columns: 1fr !important; }
+
+  /* CTA trust signals */
+  .cta-trust-row { gap: 16px !important; }
+  .cta-trust-row > div { font-size: 11px !important; }
+
+  /* Shop grid */
+  #shop-preview-grid-wrapper { grid-template-columns: 1fr 1fr !important; }
+
+  /* Buttons full-width on narrow screens */
+  .btn-mobile-full { width: 100% !important; justify-content: center !important; }
+}
+
+@media (max-width: 480px) {
+  .benefits-grid-responsive  { grid-template-columns: 1fr !important; }
+  #shop-preview-grid-wrapper { grid-template-columns: 1fr !important; }
+  .stats-inner-grid           { grid-template-columns: 1fr 1fr !important; }
+  .btn { font-size: 13px !important; padding: 14px 24px !important; }
 }

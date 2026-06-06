@@ -104,79 +104,83 @@ export function Schedule() {
 
         {/* Weekday table */}
         {activeTab === "weekday" && (
-          <table className="fade-up" style={{ width: "100%", borderCollapse: "collapse" }}>
-            <thead>
-              <tr style={{
-                background: "rgba(200,16,46,0.1)",
-                borderBottom: "1px solid rgba(200,16,46,0.3)",
-              }}>
-                {["Time", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday"].map((h) => (
-                  <th key={h} style={{
-                    fontFamily: "var(--font-head)",
-                    fontSize: "12px",
-                    fontWeight: 700,
-                    letterSpacing: "0.2em",
-                    textTransform: "uppercase",
-                    color: "var(--red)",
-                    padding: "14px 20px",
-                    textAlign: "left",
-                  }}>
-                    {h}
-                  </th>
-                ))}
-              </tr>
-            </thead>
-            <tbody>
-              {weekdayRows.map((row) => (
-                <tr key={row.time} style={{ borderBottom: "1px solid rgba(0,0,0,0.08)" }}
-                    className="schedule-row">
-                  <td style={{ padding: "16px 20px", fontFamily: "var(--font-head)", fontWeight: 700, fontSize: "16px", color: "var(--black)" }}>{row.time}</td>
-                  <td style={{ padding: "16px 20px", fontSize: "14px", color: "rgba(0,0,0,0.7)" }}><Badge label={row.mon} /></td>
-                  <td style={{ padding: "16px 20px", fontSize: "14px", color: "rgba(0,0,0,0.7)" }}><Badge label={row.tue} /></td>
-                  <td style={{ padding: "16px 20px", fontSize: "14px", color: "rgba(0,0,0,0.7)" }}><Badge label={row.wed} /></td>
-                  <td style={{ padding: "16px 20px", fontSize: "14px", color: "rgba(0,0,0,0.7)" }}><Badge label={row.thu} /></td>
-                  <td style={{ padding: "16px 20px", fontSize: "14px", color: "rgba(0,0,0,0.7)" }}><Badge label={row.fri} /></td>
+          <div className="schedule-table-scroll">
+            <table className="fade-up" style={{ width: "100%", borderCollapse: "collapse" }}>
+              <thead>
+                <tr style={{
+                  background: "rgba(200,16,46,0.1)",
+                  borderBottom: "1px solid rgba(200,16,46,0.3)",
+                }}>
+                  {["Time", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday"].map((h) => (
+                    <th key={h} style={{
+                      fontFamily: "var(--font-head)",
+                      fontSize: "12px",
+                      fontWeight: 700,
+                      letterSpacing: "0.2em",
+                      textTransform: "uppercase",
+                      color: "var(--red)",
+                      padding: "14px 20px",
+                      textAlign: "left",
+                    }}>
+                      {h}
+                    </th>
+                  ))}
                 </tr>
-              ))}
-            </tbody>
-          </table>
+              </thead>
+              <tbody>
+                {weekdayRows.map((row) => (
+                  <tr key={row.time} style={{ borderBottom: "1px solid rgba(0,0,0,0.08)" }}
+                      className="schedule-row">
+                    <td style={{ padding: "16px 20px", fontFamily: "var(--font-head)", fontWeight: 700, fontSize: "16px", color: "var(--black)" }}>{row.time}</td>
+                    <td style={{ padding: "16px 20px", fontSize: "14px", color: "rgba(0,0,0,0.7)" }}><Badge label={row.mon} /></td>
+                    <td style={{ padding: "16px 20px", fontSize: "14px", color: "rgba(0,0,0,0.7)" }}><Badge label={row.tue} /></td>
+                    <td style={{ padding: "16px 20px", fontSize: "14px", color: "rgba(0,0,0,0.7)" }}><Badge label={row.wed} /></td>
+                    <td style={{ padding: "16px 20px", fontSize: "14px", color: "rgba(0,0,0,0.7)" }}><Badge label={row.thu} /></td>
+                    <td style={{ padding: "16px 20px", fontSize: "14px", color: "rgba(0,0,0,0.7)" }}><Badge label={row.fri} /></td>
+                  </tr>
+                ))}
+              </tbody>
+            </table>
+          </div>
         )}
 
         {/* Weekend table */}
         {activeTab === "weekend" && (
-          <table className="fade-up visible" style={{ width: "100%", borderCollapse: "collapse" }}>
-            <thead>
-              <tr style={{
-                background: "rgba(200,16,46,0.1)",
-                borderBottom: "1px solid rgba(200,16,46,0.3)",
-              }}>
-                {["Time", "Saturday", "Sunday"].map((h) => (
-                  <th key={h} style={{
-                    fontFamily: "var(--font-head)",
-                    fontSize: "12px",
-                    fontWeight: 700,
-                    letterSpacing: "0.2em",
-                    textTransform: "uppercase",
-                    color: "var(--red)",
-                    padding: "14px 20px",
-                    textAlign: "left",
-                  }}>
-                    {h}
-                  </th>
-                ))}
-              </tr>
-            </thead>
-            <tbody>
-              {weekendRows.map((row) => (
-                <tr key={row.time} style={{ borderBottom: "1px solid rgba(0,0,0,0.08)" }}
-                    className="schedule-row">
-                  <td style={{ padding: "16px 20px", fontFamily: "var(--font-head)", fontWeight: 700, fontSize: "16px", color: "var(--black)" }}>{row.time}</td>
-                  <td style={{ padding: "16px 20px", fontSize: "14px", color: "rgba(0,0,0,0.7)" }}><Badge label={row.sat} /></td>
-                  <td style={{ padding: "16px 20px", fontSize: "14px", color: "rgba(0,0,0,0.7)" }}><Badge label={row.sun} /></td>
+          <div className="schedule-table-scroll">
+            <table className="fade-up visible" style={{ width: "100%", borderCollapse: "collapse" }}>
+              <thead>
+                <tr style={{
+                  background: "rgba(200,16,46,0.1)",
+                  borderBottom: "1px solid rgba(200,16,46,0.3)",
+                }}>
+                  {["Time", "Saturday", "Sunday"].map((h) => (
+                    <th key={h} style={{
+                      fontFamily: "var(--font-head)",
+                      fontSize: "12px",
+                      fontWeight: 700,
+                      letterSpacing: "0.2em",
+                      textTransform: "uppercase",
+                      color: "var(--red)",
+                      padding: "14px 20px",
+                      textAlign: "left",
+                    }}>
+                      {h}
+                    </th>
+                  ))}
                 </tr>
-              ))}
-            </tbody>
-          </table>
+              </thead>
+              <tbody>
+                {weekendRows.map((row) => (
+                  <tr key={row.time} style={{ borderBottom: "1px solid rgba(0,0,0,0.08)" }}
+                      className="schedule-row">
+                    <td style={{ padding: "16px 20px", fontFamily: "var(--font-head)", fontWeight: 700, fontSize: "16px", color: "var(--black)" }}>{row.time}</td>
+                    <td style={{ padding: "16px 20px", fontSize: "14px", color: "rgba(0,0,0,0.7)" }}><Badge label={row.sat} /></td>
+                    <td style={{ padding: "16px 20px", fontSize: "14px", color: "rgba(0,0,0,0.7)" }}><Badge label={row.sun} /></td>
+                  </tr>
+                ))}
+              </tbody>
+            </table>
+          </div>
         )}
 
         {/* CTA strip */}

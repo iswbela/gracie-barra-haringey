@@ -64,7 +64,7 @@ export function CTASection() {
           </div>
 
           {/* Trust signals */}
-          <div className="fade-up delay-4" style={{
+          <div className="fade-up delay-4 cta-trust-row" style={{
             marginTop: "48px",
             display: "flex",
             alignItems: "center",
